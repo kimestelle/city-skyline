@@ -1,0 +1,98 @@
+export const skyColors = [{
+    hour: '12:00',
+    day: true,
+    color: '#87CEEB'
+}, {
+  hour: '1:00',
+  day: true,
+  color: '#87CEEB'
+}, {
+  hour: '2:00',
+  day: true,
+  color: '#87CEEB'
+}, {
+  hour: '3:00',
+  day: true,
+  color: '#87CEEB'
+}, {
+  hour: '4:00',
+  day: true,
+  color: '#82CAFF'
+}, {
+  hour: '5:00',
+  day: true,
+  color: '#82CAFF'
+}, {
+  hour: '6:00',
+  day: true,
+  color: '#B0C4DE'
+}, {
+  hour: '7:00',
+  day: true,
+  color: '#9370DB'
+}, {
+  hour: '8:00',
+  day: false,
+  color: '#6A5ACD'
+}, {
+  hour: '9:00',
+  day: false,
+  color: '#483D8B'
+}, {
+  hour: '10:00',
+  day: false,
+  color: '#483D8B'
+}, {
+  hour: '11:00',
+  day: false,
+  color: '#483D8B'
+}, {
+  hour: '00:00',
+  day: false,
+  color: '#191970'
+}, {
+  hour: '1:00',
+  day: false,
+  color: '#191970'
+}, {
+  hour: '2:00',
+  day: false,
+  color: '#191970'
+}, {
+  hour: '3:00',
+  day: false,
+  color: '#362d4b'
+}, {
+  hour: '4:00',
+  day: false,
+  color: '#362d4b'
+}, {
+  hour: '5:00',
+  day: false,
+  color: '#946a93'
+}, {
+  hour: '6:00',
+  day: false,
+  color: '#946a93'
+}, {
+  hour: '7:00',
+  day: false,
+  color: ' #FFB6C1'
+}, {
+  hour: '8:00',
+  day: true,
+  color: '#AAD8E7'
+}, {
+  hour: '9:00',
+  day: true,
+  color: '#AAD8E7'
+}, {
+  hour: '10:00',
+  day: true,
+  color: '#AAD8E7'
+}, {
+  hour: '11:00',
+  day: true,
+  color: '#87CEEB'
+}
+];

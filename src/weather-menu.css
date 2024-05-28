@@ -1,0 +1,14 @@
+.block.fog {
+    height: 40%; /* tiny height */
+    margin-right: 0%; /* little space */
+  }
+  
+  .block.clouds {
+    height: 70%; /* big height */
+    margin-right: 1%; /* little space */
+  }
+  
+  .block.hearts {
+    height: 30%; /* small height */
+  }
+  

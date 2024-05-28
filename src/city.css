@@ -1,0 +1,58 @@
+.city {
+    position: absolute;
+    width: 100%;
+    height: 85%;
+    z-index: 5;
+    top: 0;
+    justify-content: center;
+}
+
+.sprite {
+    background-size: contain;
+    aspect-ratio: 3/7;
+    background-repeat: no-repeat;
+    animation: swapSvg 0.7s infinite;
+    content: url('./assets/walk2.svg'), url url('./assets/walk4.svg'), url('./assets/walk1.svg');
+    transition: left 0.5s ease-in-out;
+  }
+
+  .sprite-reflect {
+    transform: scaleX(-1); /* Flip the reflection vertically */
+    }
+  
+  @keyframes swapSvg {
+    0% {
+      background-image: url('./assets/walk2.svg');
+    }
+  
+    33% {
+      background-image: url('./assets/walk4.svg');
+    }
+  
+    66% {
+      background-image: url('./assets/walk1.svg');
+    }
+  
+    100% {
+      background-image: url('./assets/walk2.svg');
+    }
+  }
+
+  .undo {
+    background-color: transparent;
+    color: white;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    height: 3vh;
+    aspect-ratio: 1/1;
+    bottom: 0.5%;
+    right: 0;
+  }
+
+#button:focus,
+#button:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+} 

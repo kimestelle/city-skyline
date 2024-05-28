@@ -1,0 +1,139 @@
+.App {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  transition: background-color 15s ease;
+  flex-direction: column;
+}
+.sunbox {
+  position: absolute;
+  top: min 14vh 14vw;
+  right: 50%;
+  transform: translateX(31vh);
+  width: 4vh !important;
+  height: 4vh !important; /* Ensure it remains square */
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer; /* Optional: change cursor to indicate it's clickable */
+  z-index: 10; /* Ensure it’s above other elements */
+}
+@media (-webkit-device-pixel-ratio: 3) {
+  .bottom-bar {
+    flex-direction: column;
+  }
+}
+/* Top Bar */
+.top-bar {
+  position: relative;
+  width: 100vh;
+  margin: 2vh;
+  flex: 0.3;
+  max-width: 96vw;
+  flex-direction: row;
+}
+.camera {
+  background-color: transparent;
+  position: absolute;
+  color: white;
+  margin: 0;
+  padding: 0;
+  height: 3vh;
+  aspect-ratio: 1/1;
+  left: 0;
+  bottom: 0;
+}
+
+/* Center Bar */
+.center-bar {
+  display: flex;
+  width: 100vh;
+  flex: 1;
+  justify-content: center;
+}
+.city-container {
+  position: relative;
+  display: flex;
+  aspect-ratio: 7/5;
+  width: 70%;
+  overflow: hidden;
+  align-items: flex-end;
+  max-width: 96vw;
+}
+.city-weather {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 84%;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Semi-transparent white background */
+  z-index: 10; /* Ensure it's above city-container */
+  pointer-events: none; /* Allow clicking through the overlay */
+}
+
+/* Bottom Bar */
+.bottom-bar {
+  width: 100vw;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  box-shadow: inset 0 -6px 0 white;
+  align-items: flex-end;
+}
+.title-container {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  height: 20vw;
+} 
+.ground {
+  align-self: flex-end;
+  max-height: 50%;
+  transform: translateX(27%);
+}
+.tornado {
+  align-self: flex-end;
+  max-height: 40%;
+  padding-bottom: 5%;
+  transform: translateX(-80%);
+  bottom: 0;
+  z-index: 3;
+}
+.block-menu-container {
+  display: flex;
+  position: relative;
+  justify-content: center; /* Center blocks horizontally */
+  align-items: flex-end; /* Align blocks to the bottom */
+  flex-direction: row;
+  flex-flow: row;
+  width: 35%; /* Full width of bottom bar */
+  height: 20vw;
+}
+.block-container {
+  display: flex;
+  flex-flow: row nonwrap;
+  justify-content: center; 
+  align-items: flex-end; 
+  height: 60%; 
+  max-height: 20vh;
+  width: 100%; 
+}
+.block-menu img {
+  display: block;
+  position: absolute;
+}
+.city {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; /* Include border in width and height calculations */
+}
+
+#button:focus,
+#button:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+} 
