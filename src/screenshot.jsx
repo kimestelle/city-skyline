@@ -24,7 +24,7 @@ const Screenshot = ({targetRef}) => {
       }, [targetRef]);
 
   return (
-    <button onClick={onButtonClick} className="camera">
+    <button id="button" onClick={onButtonClick} className="camera interactive">
               <img src={camera} alt="camera icon" />
     </button>
   )

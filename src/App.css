@@ -11,7 +11,7 @@
   position: absolute;
   top: min 14vh 14vw;
   right: 50%;
-  transform: translateX(31vh);
+  transform: translateX(27vh);
   width: 4vh !important;
   height: 4vh !important; /* Ensure it remains square */
   background-color: transparent;
@@ -19,6 +19,20 @@
   cursor: pointer; /* Optional: change cursor to indicate it's clickable */
   z-index: 10; /* Ensure it’s above other elements */
 }
+
+.sun {
+  position: absolute;
+  background-color: transparent;
+  right: 20%;
+  top: 0;
+  border: transparent;
+  cursor: pointer;
+  width: 4vh;
+  height: 4vh;
+  z-index: 11;
+  pointer-events: none;
+}
+
 @media (-webkit-device-pixel-ratio: 3) {
   .bottom-bar {
     flex-direction: column;
@@ -31,7 +45,6 @@
   margin: 2vh;
   flex: 0.3;
   max-width: 96vw;
-  flex-direction: row;
 }
 .camera {
   background-color: transparent;
@@ -57,7 +70,6 @@
   display: flex;
   aspect-ratio: 7/5;
   width: 70%;
-  overflow: hidden;
   align-items: flex-end;
   max-width: 96vw;
 }
@@ -80,7 +92,7 @@
   display: flex;
   flex: 1;
   flex-direction: row;
-  box-shadow: inset 0 -6px 0 white;
+  border-bottom: solid 6px white;
   align-items: flex-end;
 }
 .title-container {
@@ -92,15 +104,6 @@
 .ground {
   align-self: flex-end;
   max-height: 50%;
-  transform: translateX(27%);
-}
-.tornado {
-  align-self: flex-end;
-  max-height: 40%;
-  padding-bottom: 5%;
-  transform: translateX(-80%);
-  bottom: 0;
-  z-index: 3;
 }
 .block-menu-container {
   display: flex;
@@ -125,15 +128,35 @@
   display: block;
   position: absolute;
 }
+
+.shadow {
+  filter: drop-shadow(2% 2% #ffffff);
+}
+
 .city {
   width: 100%;
   height: 100%;
   box-sizing: border-box; /* Include border in width and height calculations */
 }
 
-#button:focus,
-#button:active {
+
+#button, #button:hover,
+#button:active,
+#button:focus {
   outline: none;
   border: none;
   box-shadow: none;
+  background-color: transparent;
 } 
+
+.interactive:hover {
+  transform: scale(1.1);
+}
+
+.tornado.interactive:hover {
+  transform: scale(1.1) translateX(-70%);
+}
+
+.sunbox.interactive:hover {
+  transform: translateX(27vh) scale(1.1);
+}

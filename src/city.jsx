@@ -7,14 +7,18 @@ import Sprite from './components/sprite.jsx'
 import undo from './assets/undo.svg';
 
 class Block {
-  constructor (type, x, height){
-    this.name = type.name;
-    this.src = type.src;
+
+  constructor (name, src, x, height){
+    this.name = name;
+    this.src = src;
     this.x = x;
     this.height = height;
   }
 
   changeHeight(newHeight) {
+    if (newHeight > 100) {
+      newHeight = 100;
+    }
     this.height = newHeight;
   }
 }
@@ -32,38 +36,51 @@ const handleUndo = () => {
   setBlocks(copyArr);
 }
 
-const handleMouseDown = (e) => {
-  setCurrentBlockHeight(0); 
+const instantiateBlock = (e) => {
   if(!blockType) return;
+  if (currentBlockRef.current) return;
   const container = containerRef.current;
-    const rect = container.getBoundingClientRect();
-    const xPercent = ((e.clientX - rect.left) / rect.width) * 100;
-    const blockImage = blockImages.find(img => img.name === blockType);
-    currentBlockRef.current = new Block(blockImage, xPercent, 5);
-    
-    intervalRef.current = setInterval(() => {
-      setCurrentBlockHeight((prevHeight) => {
-        if (prevHeight >= 100) {
-          clearInterval(intervalRef.current);
-          return 100;
-        }
-        const newHeight = prevHeight + 1; // Increment height by 2%
-        currentBlockRef.current.height = newHeight;
+  const rect = container.getBoundingClientRect();
+  const xPercent = ((e.clientX - rect.left) / rect.width) * 100;
+  const blockImage = blockImages.find(img => img.name === blockType);
+  currentBlockRef.current = new Block(blockImage.name, blockImage.src, xPercent, 5);
+  console.log(currentBlockRef.current);
+  intervalRef.current = setInterval(() => {
+    setCurrentBlockHeight((prevHeight) => {
+      if (prevHeight >= 100) {
+        return 100;
+      } else {
+        const newHeight = prevHeight + 1;
+        currentBlockRef.current.changeHeight(newHeight);
         return newHeight;
-      });
-    }, 100); 
-    currentBlockRef.current.changeHeight(intervalRef.current);
-    console.log(currentBlockRef.current);
+      }
+
+    })
+  }, 100);
+}
+
+const stopCounter = () => {
+  if (intervalRef.current) {
+    clearInterval(intervalRef.current);
+    intervalRef.current = null;
+  }
+  console.log(currentBlockRef.current);
+  if (currentBlockRef.current) {
+      const temp =  new Block(currentBlockRef.current.name, currentBlockRef.current.src, currentBlockRef.current.x, currentBlockRef.current.height);
+      setBlocks((prevBlocks) => [...prevBlocks, temp]);
+      currentBlockRef.current.changeHeight(0);
+      currentBlockRef.current = null;
+      setCurrentBlockHeight(5);
+      console.log(temp);
+  }
+};  
+
+const handleMouseDown = (e) => {
+  instantiateBlock(e);
 }
 
 const handleMouseUp = () => {
-  if (currentBlockRef.current) {
-      setBlocks((prevBlocks) => [...prevBlocks, currentBlockRef.current]);
-  }
-  if (intervalRef.current) {
-    clearInterval(intervalRef.current);
-  }
-  setCurrentBlockHeight(0); 
+  stopCounter();
 };
 
 return (
@@ -108,7 +125,7 @@ return (
       ></img>
     )}
   </div>
-  <button className='undo' onClick={handleUndo}>
+  <button id="button" className='undo interactive' onClick={handleUndo}>
           <img src={undo}/>
         </button>
   </>
@@ -119,6 +136,14 @@ City.propTypes = {
   blockType: PropTypes.string,
   block: PropTypes.any,
   onUndo: PropTypes.func,
+  blockImage: PropTypes.shape({
+    name: PropTypes.string,
+    src: PropTypes.oneOfType([
+      PropTypes.string,  
+      PropTypes.object 
+    ]),
+    className: PropTypes.object,
+  })
 };
 
 export default City;

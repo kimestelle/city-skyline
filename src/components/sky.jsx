@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { skyColors } from './sky-colors.jsx';
 import './sky.css';
-import sun from "../assets/sun.svg";
-import moon from "../assets/moon.svg";
 
 const Sky = ({initHour}) => {
 // Setup for color
@@ -28,12 +26,8 @@ const Sky = ({initHour}) => {
       }, [hour, color]);
 
     return (
-        <><div className="background" style={{backgroundColor: color}}/>
-        <img 
-        src={((hour < 6 || hour > 17) ? sun : moon)} 
-        alt={((hour < 6 || hour > 17) ? 'Sun' : 'Moon')} 
-        className="sun" />
-        </>
+        <div className="background" style={{backgroundColor: color}}/>
+
     );
 }
 

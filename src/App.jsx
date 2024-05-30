@@ -4,12 +4,14 @@ import 'html-to-image';
 import Sky from './components/sky.jsx';
 import ground from './assets/ground.svg';
 import title from './assets/title.svg';
-import tornado from './assets/tornado.svg';
 import blockImages from './components/block-menu.jsx';
-import WeatherMenu from './weather-menu.jsx';
+import WeatherMenu from './components/weather-menu.jsx';
 // import Snow from './weather/snow.jsx';
 import City from './city.jsx';
 import Screenshot from './screenshot.jsx'
+import sun from "./assets/sun.svg";
+import moon from "./assets/moon.svg";
+import Tornado from "./tornado.jsx";
 
 
 function App() {
@@ -17,8 +19,10 @@ function App() {
   const toCaptureRef = useRef(null);
   const [blockType, setType] = useState(null);
 
+  var blockMap = blockImages
   const handleTypeChange = (newType) => {
     setType(newType);
+    blockMap = blockImages;
   }
 
   const handleHourChange = (newHour) => {
@@ -52,7 +56,12 @@ function App() {
             </div>
             <Screenshot targetRef={toCaptureRef}/>
         </div>
-        <button className="sunbox" onClick={handleDayChange} />
+        <button className="sunbox interactive" onClick={handleDayChange}>
+            <img 
+            src={((hour < 6 || hour > 17) ? sun : moon)} 
+            alt={((hour < 6 || hour > 17) ? 'Sun' : 'Moon')} 
+            className="sun interactive" />
+        </button>
         <Sky initHour={hour} onHourChange={handleHourChange}/>
       </div>
 
@@ -64,12 +73,12 @@ function App() {
         </div>
         <div className="title-container">
           <img src={title} className="ground"/>
-          <img src={tornado} className="tornado"/>
+          <Tornado />
         </div>
         <div className="block-menu-container">
-        <div className="block-container">
-          {blockImages.map((img, index) => (
-            <img src={img.src} key={index} alt={img.name} className={`block${img.className}`} onClick={() => handleTypeChange(img.name)}/>
+        <div className="block-container" >
+          {blockMap.map((image, index) => (
+            <img src={image.src} key={index} alt={image.name} className={(image.name === blockType ? `block${image.className} shadow interactive` : `block${image.className} interactive`)} onClick={() => handleTypeChange(image.name)}/>
           ))}
         </div>
         </div>

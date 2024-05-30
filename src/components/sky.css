@@ -8,17 +8,3 @@
     display: cover;
     transition: 30s ease; 
 }
-
-.sun {
-    position: absolute;
-    top: min 14vh 14vw;
-    right: 50%;
-    transform: translateX(31vh);
-    background-color: transparent;
-    border: transparent;
-    cursor: pointer;
-    width: 4vh;
-    height: 4vh;
-    z-index: -1;
-    pointer-events: none;
-  }

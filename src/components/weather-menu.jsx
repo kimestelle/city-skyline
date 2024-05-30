@@ -1,8 +1,8 @@
-import clouds from "./assets/weather/clouds.svg";
-import fog from "./assets/weather/fog.svg";
-import hearts from "./assets/weather/hearts.svg";
+import clouds from "../assets/weather/clouds.svg";
+import fog from "../assets/weather/fog.svg";
+import hearts from "../assets/weather/hearts.svg";
 import './weather-menu.css';
-import './App.css';
+import '../App.css';
 
 const blockImages = [
   { name: 'fog', src: fog, className: 'fog' },
