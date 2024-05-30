@@ -16,7 +16,8 @@
 .tornado.move {
     animation: flip-with-scale 0.3s infinite;
     animation-fill-mode: forwards;
-    transform: scale(1.1);
+    transform: scale(1.7);
+    transition: 3s ease-in;
 }
 
 @keyframes flip-with-scale {

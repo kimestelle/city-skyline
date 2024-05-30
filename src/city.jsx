@@ -13,6 +13,7 @@ class Block {
     this.src = src;
     this.x = x;
     this.height = height;
+    this.y = 0;
   }
 
   changeHeight(newHeight) {
@@ -20,6 +21,25 @@ class Block {
       newHeight = 100;
     }
     this.height = newHeight;
+  }
+
+  flyOut() {
+    if (this.flyOutInterval) {
+      clearInterval(this.flyOutInterval);
+    }
+    const xInc = (Math.random() < 0.5 ? -1 : 1);
+    var yInc = (Math.random() < 0.5 ? -1 : 1);
+    this.flyOutInterval = setInterval(() => {
+      if (Math.abs(this.y) >= 400 && Math.abs(this.x) >= 400) {
+        clearInterval(this.flyOutInterval);
+        this.flyOutInterval = null;
+        yInc = 0;
+        return;
+      }
+      this.x += xInc;
+      this.y += yInc;
+      yInc = yInc * 2;
+    }, 10);
   }
 }
 
@@ -34,6 +54,30 @@ const handleUndo = () => {
   const copyArr = [...blocks];
   copyArr.pop();
   setBlocks(copyArr);
+}
+
+const handleTornado = () => {
+  console.log('TORNADOOOOO');
+  blocks.sort((a, b) => a.x - b.x);
+  let index = 0;
+  let counter = 0.00;
+
+  const tornadoInterval = setInterval(() => {
+    counter += 0.01;
+    if (counter > 4) {
+      clearInterval(tornadoInterval);
+      return;
+    }
+
+    if (index < blocks.length && counter * 100 >= blocks[index].x) {
+      blocks[index].flyOut();
+      index += 1;
+      console.log('fly');
+    }
+    const updatedBlocks = [...blocks];
+      setBlocks(updatedBlocks);
+  }, 10)
+  setBlocks([]);
 }
 
 const instantiateBlock = (e) => {
@@ -101,7 +145,7 @@ return (
         style={{
           position: 'absolute',
           left: `${block.x}%`,
-          bottom: '0%',
+          bottom: `${block.y}%`,
           height: `${block.height}%`,
           transform: 'translateX(-50%)',
           pointerEvents: 'none',
@@ -116,7 +160,7 @@ return (
         style={{
           position: 'absolute',
           left: `${currentBlockRef.current.x}%`,
-          bottom: '0',
+          bottom: `${currentBlockRef.current.y}%`,
           height: `${currentBlockHeight}%`,
           opacity: '0.8',
           transform: 'translateX(-50%)',
@@ -128,6 +172,7 @@ return (
   <button id="button" className='undo interactive' onClick={handleUndo}>
           <img src={undo}/>
         </button>
+  <button onClick={handleTornado}/>
   </>
 );
 }

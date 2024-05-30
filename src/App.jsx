@@ -1,21 +1,20 @@
 import './App.css';
 import { useState, useRef} from 'react';
 import 'html-to-image';
-import Sky from './components/sky.jsx';
+
 import ground from './assets/ground.svg';
 import title from './assets/title.svg';
+
 import blockImages from './components/block-menu.jsx';
 import WeatherMenu from './components/weather-menu.jsx';
 // import Snow from './weather/snow.jsx';
 import City from './city.jsx';
 import Screenshot from './screenshot.jsx'
-import sun from "./assets/sun.svg";
-import moon from "./assets/moon.svg";
 import Tornado from "./tornado.jsx";
+import Sky from './components/sky.jsx';
 
 
 function App() {
-  const [hour, setHour] = useState(0);
   const toCaptureRef = useRef(null);
   const [blockType, setType] = useState(null);
 
@@ -25,27 +24,19 @@ function App() {
     blockMap = blockImages;
   }
 
-  const handleHourChange = (newHour) => {
-    setHour(newHour);
-  };
-
-  const handleDayChange = () => {
-    setHour(prevHour => ((prevHour < 6 || prevHour > 18) ? 12 : 0));
-  };
-
   const handleUndo = () => {
   }
 
 
-
   return (
     <div className="App" ref={toCaptureRef}>
+      {/* Destruction */}
+      <Tornado />
+      
       {/* Top bar: undo and screenshot */}
-      <div className="top-bar">
-
-      </div>
-
-
+      <div className="top-bar"/>
+    
+      {/* Center bar: City, weather, undo and camera buttons */}
       <div className="center-bar">
         <div className="city-container">
             <City blockType={blockType} onUndo={handleUndo}/>
@@ -56,24 +47,17 @@ function App() {
             </div>
             <Screenshot targetRef={toCaptureRef}/>
         </div>
-        <button className="sunbox interactive" onClick={handleDayChange}>
-            <img 
-            src={((hour < 6 || hour > 17) ? sun : moon)} 
-            alt={((hour < 6 || hour > 17) ? 'Sun' : 'Moon')} 
-            className="sun interactive" />
-        </button>
-        <Sky initHour={hour} onHourChange={handleHourChange}/>
+        <Sky/>
       </div>
 
 
-
+      {/* Bottom bar: menus and title letters */}
       <div className="bottom-bar">
         <div className="block-menu-container">
           <WeatherMenu/>  
         </div>
         <div className="title-container">
           <img src={title} className="ground"/>
-          <Tornado />
         </div>
         <div className="block-menu-container">
         <div className="block-container" >

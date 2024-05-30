@@ -8,3 +8,16 @@
     display: cover;
     transition: 30s ease; 
 }
+
+.sunbox, .sunbox:hover,
+.sunbox:active,
+.sunbox:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+} 
+
+.interactive:hover {
+  transform: scale(1.1);
+}
