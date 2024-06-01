@@ -28,8 +28,9 @@ class Block {
     if (this.flyOutInterval) {
       clearInterval(this.flyOutInterval);
     }
-    const xInc = (Math.random() < 0.5 ? -1 : 1);
+    const xInc = (Math.random() < 0.5 ? -4 : 4);
     var yInc = (Math.random() < 0.5 ? -1 : 1);
+    var heightFactor = 100;
     this.flyOutInterval = setInterval(() => {
       if (Math.abs(this.y) >= 400 && Math.abs(this.x) >= 400) {
         clearInterval(this.flyOutInterval);
@@ -39,6 +40,7 @@ class Block {
       }
       this.x += xInc;
       this.y += yInc;
+      this.changeHeight(heightFactor * 1 / 3);
       yInc = yInc * 2;
     }, 10);
   }
