@@ -202,10 +202,8 @@ html, body {
     align-items: flex-end;
   }
 
-  .ground {
-    align-self: flex-end;
-    height: 15vw;
-    max-height: 15vw;
+  .floor {
+    width: 84vw;
   }
 
   .bottom-bar {

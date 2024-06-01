@@ -36,7 +36,7 @@ function App() {
       <div className="center-bar">
         <div className="city-container">
             <City blockType={blockType} onUndo={handleUndo}/>
-            <img src={ground} style={{ userSelect: 'none'}}/>
+            <img src={ground} className="floor"/>
             <div className="city-weather">
                {/* <Snow/> */}
             </div>
