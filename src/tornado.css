@@ -130,7 +130,7 @@
     animation: moveBack 1.5s, flip-with-scale 0.3s infinite
 }
 
-@media (max-aspect-ratio: 9/16) {
+@media (max-width: 760px) {
     .tornado {
         height:5.5vh;
         bottom: 16.5vh;
@@ -160,7 +160,7 @@
         100% {
             height:5.5vh;
             bottom: 16.5vh;
-            left: 47.5vw;
+            left: 47.5
         }
     }
 }
