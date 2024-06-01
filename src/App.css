@@ -172,7 +172,7 @@ html, body {
 @media (-webkit-device-pixel-ratio: 3) {
   .sunbox {
     right: 20vw;
-    top: 20vh;
+    bottom : 80vh;
     transform: translateX(0vw);
     width: 4vh !important;
     height: 4vh !important; 
