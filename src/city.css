@@ -5,6 +5,7 @@
     z-index: 5;
     top: 0;
     justify-content: center;
+    border: 1px solid red;
 }
 
 .notouch {
@@ -12,12 +13,14 @@
 }
 
 .sprite {
+    position: absolute;
+    z-index: 6;
     background-size: contain;
     aspect-ratio: 3/7;
     background-repeat: no-repeat;
     animation: swapSvg 0.7s infinite;
     content: url('./assets/walk2.svg'), url url('./assets/walk4.svg'), url('./assets/walk1.svg'), url('./assets/aah.svg');
-    transition: left 0.5s ease-in-out;
+    transition: left 0.5s ease-in-out, bottom 0.5s ease-in-out;
   }
 
   .ahh {
@@ -26,8 +29,8 @@
   }
   
 
-  .sprite.reflect {
-    transform: scaleX(-1); /* Flip the reflection vertically */
+  .reflect {
+    transform: scaleX(-1);
     }
   
   @keyframes swapSvg {

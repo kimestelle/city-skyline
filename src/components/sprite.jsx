@@ -8,6 +8,7 @@ const Sprite = ({ index, x, height, tornado }) => {
   const [speed, setSpeed] = useState(((Math.random() + 1) * height)/ 15);
   const [turn, setTurn] = useState(((Math.random() + 1) / 2) * 30);
   const [y, setY] = useState(0);
+  const spriteHeight = height;
 
 
   useEffect(() => {
@@ -31,10 +32,20 @@ const Sprite = ({ index, x, height, tornado }) => {
           setSpeed(((Math.random() + 1) * height) / 15);
           setTurn(((Math.random() + 1) / 2) * 30);
         }
-        setPosition(prevPosition => prevPosition < (100 - (3 * height / 7)) && prevPosition > 0 ? (prevPosition + (direction * speed)) : (prevPosition < 0 ? 5 : (95 - (3 * height / 7))));
+        setPosition(prevPosition => {
+          setTurn(prevTurn => prevTurn - 1);
+          const nextPosition = prevPosition + (direction * speed);
+          if (nextPosition < 0) {
+              return 5;
+          } else if (nextPosition > (100 - (3 * height / 7))) {
+              return (95 - (3 * height / 7));
+          } else {
+              return nextPosition;
+          }
+        });
         setTurn(prevTurn => prevTurn - 1);
       }, 500);
-
+      console.log(position);
       return () => clearInterval(interval);
     }
   }, [tornado, height, position, direction, speed, turn]);
@@ -44,12 +55,9 @@ const Sprite = ({ index, x, height, tornado }) => {
       ref={index}
       className={tornado ? 'sprite ahh' : (direction === -1 ? 'sprite' : 'sprite reflect')}
       style={{
-        position: 'absolute',
         left: `${position}%`,
-        height: `${height}%`,
+        height: `${spriteHeight}%`,
         bottom: `${y}%`,
-        zIndex: 6,
-        transition: 'left 0.5s ease-in-out, bottom 0.5s ease-in-out',
       }}
     ></div>
   );

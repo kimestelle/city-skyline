@@ -145,9 +145,9 @@ const stopCounter = () => {
       const temp =  new Block(currentBlockRef.current.name, currentBlockRef.current.src, currentBlockRef.current.x, currentBlockRef.current.height);
       setBlocks((prevBlocks) => [...prevBlocks, temp]);
       currentBlockRef.current.changeHeight(0);
+      console.log(currentBlockRef.current.x);
       currentBlockRef.current = null;
       setCurrentBlockHeight(5);
-      console.log(temp, tornado);
   }
 };  
 
