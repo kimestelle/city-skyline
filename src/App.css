@@ -6,7 +6,17 @@
   align-items: center; 
   transition: background-color 15s ease;
   flex-direction: column;
+  overflow: hidden;
+  user-select: none;
 }
+
+html, body {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .sunbox {
   position: absolute;
   top: min 14vh 14vw;
@@ -151,12 +161,11 @@
   background-color: transparent;
 } 
 
-.interactive:hover {
-  transform: scale(1.1);
+.interactive {
+  cursor: pointer;
 }
-
-.tornado.interactive:hover {
-  transform: scale(1.1) translateX(-70%);
+.interactive:hover {
+  transform: scale(1.1vw);
 }
 
 .sunbox.interactive:hover {

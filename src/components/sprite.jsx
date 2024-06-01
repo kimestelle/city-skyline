@@ -25,7 +25,7 @@ const Sprite = ({ index, x, height, tornado }) => {
 
   useEffect(() => {
     if (!tornado) {
-    const interval = setInterval(() => {
+      const interval = setInterval(() => {
       if (position <= 0 || position >= (100 - (3 * height / 7)) || turn < 0) {
 
         setDirection(prevDirection => -prevDirection);

@@ -7,6 +7,10 @@
     justify-content: center;
 }
 
+.notouch {
+  pointer-events: none;
+}
+
 .sprite {
     background-size: contain;
     aspect-ratio: 3/7;

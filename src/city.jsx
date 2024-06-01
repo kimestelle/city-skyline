@@ -1,6 +1,7 @@
 
 import { useState, useRef } from 'react';
 import blockImages from './components/block-menu.jsx';
+import Tornado from "./tornado.jsx";
 import './city.css'; // Import the CSS file for styling
 import PropTypes from 'prop-types';
 import Sprite from './components/sprite.jsx'
@@ -81,11 +82,22 @@ const handleTornado = () => {
       setBlocks(updatedBlocks);
   }, 10);
 
-  blocks.forEach((block) => {
-    block.splice(block); 
-  });
-  setBlocks([]);
-  setTornado(false);
+  let spliceCountDown = 0;
+  const spliceInterval = setInterval(() => {
+    console.log('started');
+    if (spliceCountDown == 1) {
+      const updatedBlocks = blocks.filter(block => block.name !== 'sprite');
+      setBlocks(updatedBlocks);
+      blocks.splice(0, blocks.length)
+      setTornado(false);
+      console.log('tornado done');
+      console.log(blocks);
+      clearInterval(spliceInterval);
+      return;
+    } else {
+    spliceCountDown++;
+  }
+  }, 1500);
 }
 
 const instantiateBlock = (e) => {
@@ -123,7 +135,7 @@ const stopCounter = () => {
       currentBlockRef.current.changeHeight(0);
       currentBlockRef.current = null;
       setCurrentBlockHeight(5);
-      console.log(temp);
+      console.log(temp, tornado);
   }
 };  
 
@@ -137,8 +149,9 @@ const handleMouseUp = () => {
 
 return (
   <>
+  <Tornado onTornado={handleTornado}/>
   <div
-    className="city"
+    className={tornado ? "city notouch" : "city"}
     ref={containerRef}
     onMouseDown={handleMouseDown}
     onMouseUp={handleMouseUp}
@@ -180,7 +193,6 @@ return (
   <button id="button" className='undo interactive' onClick={handleUndo}>
           <img src={undo}/>
         </button>
-  <button onClick={handleTornado}/>
   </>
 );
 }

@@ -10,7 +10,6 @@ import WeatherMenu from './components/weather-menu.jsx';
 // import Snow from './weather/snow.jsx';
 import City from './city.jsx';
 import Screenshot from './screenshot.jsx'
-import Tornado from "./tornado.jsx";
 import Sky from './components/sky.jsx';
 
 
@@ -38,7 +37,6 @@ function App() {
         <div className="city-container">
             <City blockType={blockType} onUndo={handleUndo}/>
             <img src={ground} style={{ userSelect: 'none'}}/>
-            <Tornado />
             <div className="city-weather">
                {/* <Snow/> */}
             </div>

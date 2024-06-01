@@ -1,9 +1,15 @@
 .tornado {
     position: fixed;
-        height:8vw;
-        bottom: 2.2vw;
-        left: 48vw;
+    height:8vw;
+    bottom: 2.2vw;
+    left: 48vw;
+    cursor: pointer;
 }
+
+.tornado.absolute {
+    position: absolute;
+}
+
 
 .tornado:hover {
     animation: flip-with-scale 0.3s infinite;
@@ -13,6 +19,7 @@
     animation: flip-with-scale 0.3s infinite;
     animation-fill-mode: forwards;
     transition: 1s ease-in; /* Faster transition */
+    pointer-events: none;
 }
 
 @keyframes flip-with-scale {
@@ -26,13 +33,11 @@
 
 @keyframes moveToBottomRight {
     0% {
-        position: fixed;
         height:8vw;
         bottom: 2.2vw;
         left: 48vw;
     }
     100% {
-        position: fixed;
         left: 100%;
         bottom: 15vh;
         height: min(12vh, 10vw);
@@ -41,66 +46,57 @@
 
 @keyframes moveToBottomLeft {
     0% {
-        position: absolute;
         left: 150%;
-        bottom: 5%;
+        bottom: 0%;
         height: min(12vh, 10vw);
     }
     100% {
-        position: absolute;
         left: 0%;
-        bottom: 20%;
+        bottom: 16%;
         height: min(15vh, 12vw);
     }
 }
 
 @keyframes moveLeftToRight {
     0% {
-        position: absolute;
         left: 0%;
-        bottom: 20%;
+        bottom: 16%;
         height: min(15vh, 12vw);
     }
 
     20% {
-        position: absolute;
         left: calc((100% - min(16vh, 8vw)) * 3 / 10);
-        bottom: 20%;
+        bottom: 16%;
         height: min(21vh, 14vw);
     }
 
     40% {
-        position: absolute;
         left: calc((100% - min(16vh, 8vw)) * 2/ 5);
-        bottom: 20%;
+        bottom: 16%;
         height: min(23vh, 17vw);
     }
 
     50% {
-        position: absolute;
         left: calc((100% - min(16vh, 8vw)) / 2);
-        bottom: 20%;
+        bottom: 16%;
         height: min(24vh, 18vw);
     }
 
     60% {
-        position: absolute;
         left: calc((100% - min(16vh, 8vw)) * 3 / 5);
-        bottom: 20%;
+        bottom: 16%;
         height: min(23vh, 17vw);
     }
 
     70% {
-        position: absolute;
         left: calc((100% - min(16vh, 8vw)) * 7 / 10);
-        bottom: 20%;
+        bottom: 16%;
         height: min(21vh, 14vw);
     }
 
     100% {
-        position: absolute;
         left: 100%;
-        bottom: 20%;
+        bottom: 16%;
         height: 5%;
     }
 }
@@ -131,5 +127,5 @@
 }
 
 .tornado.move-back {
-    animation: moveBack 1.5s ease-in, flip-with-scale 0.3s infinite
+    animation: moveBack 1.5s, flip-with-scale 0.3s infinite
 }
