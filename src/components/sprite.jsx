@@ -26,42 +26,40 @@ const Sprite = ({ index, x, height, tornado }) => {
   useEffect(() => {
     if (!tornado) {
       const interval = setInterval(() => {
-      if (position <= 0 || position >= (100 - (3 * height / 7)) || turn < 0) {
+        if (position <= 0 || position >= (100 - (3 * height / 7)) || turn < 0) {
+          setDirection(prevDirection => -prevDirection);
+          setSpeed(((Math.random() + 1) * height) / 15);
+          setTurn(((Math.random() + 1) / 2) * 30);
+        }
+        setPosition(prevPosition => prevPosition < (100 - (3 * height / 7)) && prevPosition > 0 ? (prevPosition + (direction * speed)) : (prevPosition < 0 ? 5 : (95 - (3 * height / 7))));
+        setTurn(prevTurn => prevTurn - 1);
+      }, 500);
 
-        setDirection(prevDirection => -prevDirection);
-        setSpeed(((Math.random() + 1) * height)/ 15);
-        setTurn(((Math.random() + 1) / 2) * 30);
-        console.log(position);
-      } 
-      setPosition(prevPosition => prevPosition < (100 - (3 * height / 7)) & prevPosition > 0 ? (prevPosition + (direction * speed)) : (prevPosition < 0 ? 5 : (95 - (3 * height / 7))));
-      setTurn(prevTurn => prevTurn - 1);
-      
-    }, 500); 
-
-    return () => clearInterval(interval);
-  }
+      return () => clearInterval(interval);
+    }
   }, [tornado, height, position, direction, speed, turn]);
 
   return (
     <div
       ref={index}
-      className={tornado ? 'sprite ahh' : (direction === -1 ? ('sprite') : ('sprite reflect'))}
+      className={tornado ? 'sprite ahh' : (direction === -1 ? 'sprite' : 'sprite reflect')}
       style={{
         position: 'absolute',
-        left: `${position}%`, 
-        height: `${height}%`, 
+        left: `${position}%`,
+        height: `${height}%`,
         bottom: `${y}%`,
-        zIndex: '6',
+        zIndex: 6,
+        transition: 'left 0.5s ease-in-out, bottom 0.5s ease-in-out',
       }}
     ></div>
   );
 };
 
 Sprite.propTypes = {
-    x: PropTypes.number,
-    height: PropTypes.number,
-    index: PropTypes.number,
-    tornado: PropTypes.bool,
-  };
+  x: PropTypes.number,
+  height: PropTypes.number,
+  index: PropTypes.number,
+  tornado: PropTypes.bool,
+};
 
 export default Sprite;

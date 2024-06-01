@@ -165,7 +165,7 @@ html, body {
   transform: translateX(27vh) scale(1.1);
 }
 
-@media (max-aspect-ratio: 1/2) {
+@media (max-aspect-ratio: 9/16) {
   .sunbox {
     right: 20vw;
     bottom : 80vh;

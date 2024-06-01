@@ -67,7 +67,7 @@
   box-shadow: none;
 } 
 
-@media (max-aspect-ratio: 1/2) {
+@media (max-aspect-ratio: 9/16) {
   .undo {
     height: 2.5vh;
   }
