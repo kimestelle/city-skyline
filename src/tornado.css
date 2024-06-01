@@ -1,10 +1,8 @@
 .tornado {
     position: fixed;
-    height:8vw;
-    bottom: 2.2vw;
-    left: 48vw;
-    z-index: 3;
-    border: 2px solid white;
+        height:8vw;
+        bottom: 2.2vw;
+        left: 48vw;
 }
 
 .tornado:hover {
