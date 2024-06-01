@@ -168,7 +168,7 @@ html, body {
 @media all and (max-width: 760px) {
   .sunbox {
     right: 20vw;
-    bottom : 80vh;
+    bottom : 75vh;
     transform: translateX(0vw);
     width: 4vh !important;
     height: 4vh !important; 

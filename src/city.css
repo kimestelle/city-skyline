@@ -13,7 +13,6 @@
 
 .sprite {
     position: absolute;
-    background-size: contain;
     aspect-ratio: 3/7;
     background-repeat: no-repeat;
     animation: swapSvg 0.7s infinite;
