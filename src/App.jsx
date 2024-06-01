@@ -28,9 +28,7 @@ function App() {
 
   return (
     <div className="App" ref={toCaptureRef} onContextMenu={(e)=> e.preventDefault()}>
-      
-      {/* Top bar: undo and screenshot */}
-      <div className="top-bar"/>
+
     
       {/* Center bar: City, weather, undo and camera buttons */}
       <div className="center-bar">
