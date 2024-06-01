@@ -12,11 +12,17 @@
     aspect-ratio: 3/7;
     background-repeat: no-repeat;
     animation: swapSvg 0.7s infinite;
-    content: url('./assets/walk2.svg'), url url('./assets/walk4.svg'), url('./assets/walk1.svg');
+    content: url('./assets/walk2.svg'), url url('./assets/walk4.svg'), url('./assets/walk1.svg'), url('./assets/aah.svg');
     transition: left 0.5s ease-in-out;
   }
 
-  .sprite-reflect {
+  .ahh {
+    background-image: url('./assets/aah.svg');
+    animation: none;
+  }
+  
+
+  .sprite.reflect {
     transform: scaleX(-1); /* Flip the reflection vertically */
     }
   

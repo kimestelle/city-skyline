@@ -49,6 +49,7 @@ const currentBlockRef = useRef(null);
 const containerRef = useRef(null);
 const intervalRef = useRef(null);
 const [currentBlockHeight, setCurrentBlockHeight] = useState(5);
+const [tornado, setTornado] = useState(false);
 
 const handleUndo = () => {
   const copyArr = [...blocks];
@@ -58,26 +59,33 @@ const handleUndo = () => {
 
 const handleTornado = () => {
   console.log('TORNADOOOOO');
+  setTornado(true);
   blocks.sort((a, b) => a.x - b.x);
   let index = 0;
   let counter = 0.00;
 
   const tornadoInterval = setInterval(() => {
     counter += 0.01;
-    if (counter > 4) {
+    if (counter > 2) {
       clearInterval(tornadoInterval);
       return;
     }
 
     if (index < blocks.length && counter * 100 >= blocks[index].x) {
-      blocks[index].flyOut();
+      if (blocks[index].name != 'sprite') 
+        {blocks[index].flyOut();}
       index += 1;
       console.log('fly');
     }
     const updatedBlocks = [...blocks];
       setBlocks(updatedBlocks);
-  }, 10)
+  }, 10);
+
+  blocks.forEach((block) => {
+    block.splice(block); 
+  });
   setBlocks([]);
+  setTornado(false);
 }
 
 const instantiateBlock = (e) => {
@@ -137,7 +145,7 @@ return (
   >
     {blocks.map((block, index) => (
       block.name === "sprite" ? (
-        <Sprite key={index} x={block.x} height={block.height}/>
+        <Sprite key={index} x={block.x} height={block.height} tornado={tornado}/>
       ) : (
       <img
         key={index}

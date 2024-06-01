@@ -72,6 +72,7 @@
   width: 70%;
   align-items: flex-end;
   max-width: 96vw;
+  border: solid 2px white;
 }
 .city-weather {
   position: absolute;
@@ -84,6 +85,7 @@
   align-items: center; /* Semi-transparent white background */
   z-index: 10; /* Ensure it's above city-container */
   pointer-events: none; /* Allow clicking through the overlay */
+  border: solid 2px white;
 }
 
 /* Bottom Bar */

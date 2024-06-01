@@ -1,31 +1,137 @@
 .tornado {
-    position: absolute;
-    height: min(16vh, 8vw);
-    padding-bottom: min(5.1vh, 2.3vw);
-    bottom: 0;
-    right: 44.9vw;
+    position: fixed;
+    height:8vw;
+    bottom: 2.2vw;
+    left: 48vw;
     z-index: 3;
-  }
+    border: 2px solid white;
+}
 
 .tornado:hover {
     animation: flip-with-scale 0.3s infinite;
-
-    transform: scale(1.1);
 }
 
 .tornado.move {
     animation: flip-with-scale 0.3s infinite;
     animation-fill-mode: forwards;
-    transform: scale(1.7);
-    transition: 3s ease-in;
+    transition: 1s ease-in; /* Faster transition */
 }
 
 @keyframes flip-with-scale {
     0% {
         transform: perspective(200px) scaleX(1);
     }
-
     100% {
         transform: perspective(200px) scaleX(-1);
     }
+}
+
+@keyframes moveToBottomRight {
+    0% {
+        position: fixed;
+        height:8vw;
+        bottom: 2.2vw;
+        left: 48vw;
+    }
+    100% {
+        position: fixed;
+        left: 100%;
+        bottom: 15vh;
+        height: min(12vh, 10vw);
+    }
+}
+
+@keyframes moveToBottomLeft {
+    0% {
+        position: absolute;
+        left: 150%;
+        bottom: 5%;
+        height: min(12vh, 10vw);
+    }
+    100% {
+        position: absolute;
+        left: 0%;
+        bottom: 20%;
+        height: min(15vh, 12vw);
+    }
+}
+
+@keyframes moveLeftToRight {
+    0% {
+        position: absolute;
+        left: 0%;
+        bottom: 20%;
+        height: min(15vh, 12vw);
+    }
+
+    20% {
+        position: absolute;
+        left: calc((100% - min(16vh, 8vw)) * 3 / 10);
+        bottom: 20%;
+        height: min(21vh, 14vw);
+    }
+
+    40% {
+        position: absolute;
+        left: calc((100% - min(16vh, 8vw)) * 2/ 5);
+        bottom: 20%;
+        height: min(23vh, 17vw);
+    }
+
+    50% {
+        position: absolute;
+        left: calc((100% - min(16vh, 8vw)) / 2);
+        bottom: 20%;
+        height: min(24vh, 18vw);
+    }
+
+    60% {
+        position: absolute;
+        left: calc((100% - min(16vh, 8vw)) * 3 / 5);
+        bottom: 20%;
+        height: min(23vh, 17vw);
+    }
+
+    70% {
+        position: absolute;
+        left: calc((100% - min(16vh, 8vw)) * 7 / 10);
+        bottom: 20%;
+        height: min(21vh, 14vw);
+    }
+
+    100% {
+        position: absolute;
+        left: 100%;
+        bottom: 20%;
+        height: 5%;
+    }
+}
+
+@keyframes moveBack {
+    0% {
+        left: 50vw;
+        bottom: 2.2vw;
+        height: 1vh;
+    }
+    100% {
+        left: 48vw;
+        bottom: 2.2vw;
+        height: min(16vh, 8vw);
+    }
+}
+
+.tornado.move-to-bottom-right {
+    animation: moveToBottomRight 0.3s forwards, flip-with-scale 0.3s infinite
+}
+
+.tornado.move-to-bottom-left {
+    animation: moveToBottomLeft 0.7s forwards, flip-with-scale 0.3s infinite
+}
+
+.tornado.move-left-to-right {
+    animation: moveLeftToRight 1.0s ease-in, flip-with-scale 0.3s infinite
+}
+
+.tornado.move-back {
+    animation: moveBack 1.5s ease-in, flip-with-scale 0.3s infinite
 }

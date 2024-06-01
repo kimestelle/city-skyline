@@ -21,7 +21,6 @@ function App() {
   var blockMap = blockImages
   const handleTypeChange = (newType) => {
     setType(newType);
-    blockMap = blockImages;
   }
 
   const handleUndo = () => {
@@ -30,8 +29,6 @@ function App() {
 
   return (
     <div className="App" ref={toCaptureRef}>
-      {/* Destruction */}
-      <Tornado />
       
       {/* Top bar: undo and screenshot */}
       <div className="top-bar"/>
@@ -41,7 +38,7 @@ function App() {
         <div className="city-container">
             <City blockType={blockType} onUndo={handleUndo}/>
             <img src={ground} style={{ userSelect: 'none'}}/>
-
+            <Tornado />
             <div className="city-weather">
                {/* <Snow/> */}
             </div>
