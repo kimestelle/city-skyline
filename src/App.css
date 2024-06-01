@@ -1,3 +1,6 @@
+/* div {
+  border: 1px solid red;
+} */
 .App {
   height: 100vh;
   width: 100vw;
@@ -15,6 +18,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  -webkit-overflow-scrolling: touch;
 }
 
 .sunbox {
@@ -43,11 +47,6 @@ html, body {
   pointer-events: none;
 }
 
-@media (-webkit-device-pixel-ratio: 3) {
-  .bottom-bar {
-    flex-direction: column;
-  }
-}
 /* Top Bar */
 .top-bar {
   position: relative;
@@ -82,7 +81,6 @@ html, body {
   width: 70%;
   align-items: flex-end;
   max-width: 96vw;
-  border: solid 2px white;
 }
 .city-weather {
   position: absolute;
@@ -95,7 +93,6 @@ html, body {
   align-items: center; /* Semi-transparent white background */
   z-index: 10; /* Ensure it's above city-container */
   pointer-events: none; /* Allow clicking through the overlay */
-  border: solid 2px white;
 }
 
 /* Bottom Bar */
@@ -170,4 +167,65 @@ html, body {
 
 .sunbox.interactive:hover {
   transform: translateX(27vh) scale(1.1);
+}
+
+@media (-webkit-device-pixel-ratio: 3) {
+  .sunbox {
+    right: 20vw;
+    top: 20vh;
+    transform: translateX(0vw);
+    width: 4vh !important;
+    height: 4vh !important; 
+    z-index: 10;
+  }
+  .sunbox.interactive:hover {
+    transform: translateX(0vh) scale(1.1);
+  }
+  .sun {
+    right: 0vw;
+    top: 0vh;
+    width: 2.5vh;
+    height: 2.5vh;
+  }
+
+  .top-bar {
+    position: absolute;
+    height: 0;
+  }
+  
+  .city-container {
+    position: absolute;
+    width: 84vw;
+    max-width: 84vw;
+    height: 60vw;
+    bottom: 55vh;
+    align-items: flex-end;
+  }
+
+  .bottom-bar {
+    position: absolute;
+    height: 50vh;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 0px;
+    padding-bottom: 2vh;
+  }
+
+  .title-container {
+    width: 90%;
+    height: 14vh;
+    border-bottom: solid 0.3vh white;
+  } 
+
+  .block-menu-container {
+    height: 14vh;
+    border-bottom: solid 0.3vh white;
+    width: 90vw;
+  }
+  .block-container {
+    width: 100vw;
+    height: 12vh;
+  }
 }

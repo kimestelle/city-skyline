@@ -1,5 +1,5 @@
 
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import blockImages from './components/block-menu.jsx';
 import Tornado from "./tornado.jsx";
 import './city.css'; // Import the CSS file for styling
@@ -53,6 +53,16 @@ const containerRef = useRef(null);
 const intervalRef = useRef(null);
 const [currentBlockHeight, setCurrentBlockHeight] = useState(5);
 const [tornado, setTornado] = useState(false);
+const [touchDevice, setTouchDevice] = useState(false);
+
+useEffect(() => {
+  const checkIfTouchDevice = () => {
+    if ('ontouchstart' in window || navigator.maxTouchPoints) {
+      setTouchDevice(true);
+    }
+  };
+  checkIfTouchDevice();
+}, []);
 
 const handleUndo = () => {
   const copyArr = [...blocks];
@@ -142,12 +152,22 @@ const stopCounter = () => {
 };  
 
 const handleMouseDown = (e) => {
+  if (touchDevice) return;
   instantiateBlock(e);
 }
 
+const handleTouchStart = (e) => {
+  instantiateBlock(e.touches[0]);
+}
+
 const handleMouseUp = () => {
+  if (touchDevice) return;
   stopCounter();
 };
+
+const handleTouchEnd = () => {
+  stopCounter();
+}
 
 return (
   <>
@@ -157,6 +177,8 @@ return (
     ref={containerRef}
     onMouseDown={handleMouseDown}
     onMouseUp={handleMouseUp}
+    onTouchStart={handleTouchStart}
+    onTouchEnd={handleTouchEnd}
   >
     {blocks.map((block, index) => (
       block.name === "sprite" ? (

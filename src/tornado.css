@@ -129,3 +129,38 @@
 .tornado.move-back {
     animation: moveBack 1.5s, flip-with-scale 0.3s infinite
 }
+
+@media (-webkit-device-pixel-ratio: 3) {
+    .tornado {
+        height:5.5vh;
+        bottom: 17.8vh;
+        left: 47vw;
+        z-index: 10;
+    }
+
+    @keyframes moveToBottomRight {
+        0% {
+            height:5.5vh;
+            bottom: 17.8vh;
+            left: 47vw;
+        }
+        100% {
+            left: 100%;
+            bottom: 30vh;
+            height: 7vh;
+        }
+    }
+
+    @keyframes moveBack {
+        0% {
+            height:0.5vh;
+            bottom: 17.8vh;
+            left: 49vw;
+        }
+        100% {
+            height:5.5vh;
+            bottom: 17.8vh;
+            left: 47vw;
+        }
+    }
+}
