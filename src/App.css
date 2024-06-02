@@ -200,8 +200,8 @@ html, body {
   .App {
     max-height: 100vh;
     height: 100vh;
-    max-height: 100svh;
-    height: 100svh;
+    max-height: 100dvh;
+    height: 100dvh;
     justify-content: flex-end;
     border: 1px solid red;
     overflow: hidden;
