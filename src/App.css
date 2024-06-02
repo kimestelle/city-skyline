@@ -83,7 +83,6 @@ html, body {
   width: min(70vw, 70vh);
   height: min(50vw, 50vh);
   align-items: flex-end;
-  overflow: hidden;
 }
 
 /* City Weather */
@@ -98,6 +97,7 @@ html, body {
   align-items: center;
   z-index: 10;
   pointer-events: none;
+  overflow: hidden;
 }
 
 /* Bottom Bar */
@@ -218,6 +218,7 @@ html, body {
     top: 0vh;
     width: 2.5vh;
     height: 2.5vh;
+    opacity: 70%;
   }
 
   .camera {
@@ -257,7 +258,6 @@ html, body {
     margin-bottom: 0px;
     border: 1px solid red;
     flex: 1;
-
   }
 
   .title-container {
@@ -278,6 +278,7 @@ html, body {
     max-height: 14vh;
     flex: 1;
     width: 88vw;
+    overflow: hidden;
   }
 
   .block-container {

@@ -38,6 +38,7 @@ function App() {
       ...prevWeatherState,
       weather: weatherChange,
     }));
+    console.log(weatherState);
   };
 
   return (
@@ -50,7 +51,7 @@ function App() {
             <City blockType={blockType} onUndo={handleUndo}/>
             <img src={ground} className="floor"/>
             <div className="city-weather">
-               <Weather weather={weatherState.weather} day={weatherState.day}/>
+               <Weather weatherState={weatherState}/>
             </div>
             <Screenshot targetRef={toCaptureRef}/>
         </div>

@@ -6,7 +6,7 @@ const Sprite = ({ index, x, height, tornado }) => {
   const [position, setPosition] = useState(x);
   const [direction, setDirection] = useState(Math.random() < 0.5 ? -1 : 1);
   const [speed, setSpeed] = useState(((Math.random() + 1) * height)/ 15);
-  const [turn, setTurn] = useState(((Math.random() + 1) / 2) * 30);
+  const [turn, setTurn] = useState(((Math.random() + 1) / 2) * 60);
   const [y, setY] = useState(0);
   const spriteHeight = height;
 
