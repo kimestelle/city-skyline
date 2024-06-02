@@ -40,8 +40,8 @@
     }
     100% {
         left: 100%;
-        bottom: 15vh;
-        height: min(12vh, 10vw);
+        bottom: 6vw;
+        height: min(14vh, 12vw);
     }
 }
 
@@ -49,12 +49,12 @@
     0% {
         left: 150%;
         bottom: 0%;
-        height: min(12vh, 10vw);
+        height: 6vw;
     }
     100% {
         left: 0%;
         bottom: 16%;
-        height: min(15vh, 12vw);
+        height: min(12vh, 10vw);
     }
 }
 
@@ -62,13 +62,13 @@
     0% {
         left: 0%;
         bottom: 16%;
-        height: min(15vh, 12vw);
+        height: min(12vh, 10vw);
     }
 
     20% {
         left: calc((100% - min(16vh, 8vw)) * 3 / 10);
         bottom: 16%;
-        height: min(21vh, 14vw);
+        height: min(20vh, 13vw);
     }
 
     40% {
