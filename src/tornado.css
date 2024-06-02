@@ -1,7 +1,7 @@
 .tornado {
     position: fixed;
     height:8vw;
-    bottom: 2.2vw;
+    bottom: 4.2vw;
     left: 48vw;
     cursor: pointer;
 }
@@ -34,7 +34,7 @@
 @keyframes moveToBottomRight {
     0% {
         height:8vw;
-        bottom: 2.2vw;
+        bottom: 4.2vw;
         left: 48vw;
     }
     100% {
@@ -104,12 +104,12 @@
 @keyframes moveBack {
     0% {
         left: 50vw;
-        bottom: 2.2vw;
+        bottom: 4.2vw;
         height: 1vh;
     }
     100% {
         left: 48vw;
-        bottom: 2.2vw;
+        bottom: 4.2vw;
         height: min(16vh, 8vw);
     }
 }

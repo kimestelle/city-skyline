@@ -88,12 +88,13 @@ html, body {
 
 /* Bottom Bar */
 .bottom-bar {
-  width: 100vw;
+  width: 96vw;
   max-height: 40vh;
   display: flex;
   flex: 1;
   flex-direction: row;
-  border-bottom: solid 6px white;
+  border-bottom: solid 3px white;
+  margin-bottom: calc(100vh-96vw);
   align-items: flex-end;
 }
 .title-container {
@@ -151,7 +152,7 @@ html, body {
   outline: none;
   border: none;
   box-shadow: none;
-  background-color: transparent;
+  background-color: none;
 } 
 
 .interactive {
@@ -197,7 +198,7 @@ html, body {
   }
 
   .floor {
-    width: 84vw;
+    width: 100%;
   }
 
   .bottom-bar {
@@ -208,11 +209,11 @@ html, body {
     justify-content: flex-end;
     align-items: center;
     border-bottom: 0px;
-    padding-bottom: 2vh;
+    margin-bottom: 5vw;
   }
 
   .title-container {
-    width: 90%;
+    width: 90vw;
     height: 14vh;
     border-bottom: solid 0.3vh white;
   } 
