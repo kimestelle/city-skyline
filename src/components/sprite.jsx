@@ -45,7 +45,6 @@ const Sprite = ({ index, x, height, tornado }) => {
         });
         setTurn(prevTurn => prevTurn - 1);
       }, 500);
-      console.log(position);
       return () => clearInterval(interval);
     }
   }, [tornado, height, position, direction, speed, turn]);
