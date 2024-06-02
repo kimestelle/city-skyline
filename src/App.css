@@ -125,7 +125,11 @@ html, body {
 .ground {
   align-self: flex-end;
   max-height: 50%;
-  overflow: hidden;
+}
+
+.floor {
+  width: 100%;
+  z-index: -1;
 }
 
 /* Block Menu Container */
@@ -192,6 +196,9 @@ html, body {
 
 /* Responsive Styles */
 @media all and (max-width: 760px) {
+  .App {
+    border: 1px solid red;
+  }
   .sunbox {
     right: 20vw;
     transform: translateX(-4vw);
@@ -214,22 +221,18 @@ html, body {
 
   .center-bar {
     align-items: center;
+    max-height: 50vh;
   }
 
   .city-container {
     width: 77vw;
     height: 55vw;
+    max-height: 50vh;
     aspect-ratio: 7/5;
     z-index: 10;
     align-items: flex-end;
     justify-content: center;
     top: 0;
-  }
-
-  .floor {
-    width: 100%;
-    overflow: hidden;
-    z-index: -1;
   }
 
   .bottom-bar {
@@ -262,249 +265,3 @@ html, body {
     height: 12vh;
   }
 }
-
-/* .App {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-  transition: background-color 15s ease;
-  flex-direction: column;
-  overflow: hidden;
-  user-select: none;
-}
-
-html, body {
-  overflow: hidden;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  -webkit-overflow-scrolling: touch;
-}
-
-.sunbox {
-  position: absolute;
-  top: min 14vh 14vw;
-  right: 50vw;
-  transform: translateX(27vh);
-  width: 4vh !important;
-  height: 4vh !important; 
-  background-color: transparent;
-  border: transparent;
-  cursor: pointer; 
-  z-index: 10; 
-}
-
-.sun {
-  position: absolute;
-  background-color: transparent;
-  top: 0;
-  right: 2vw;
-  border: transparent;
-  cursor: pointer;
-  width: 4vh;
-  height: 4vh;
-  z-index: 11;
-  pointer-events: none;
-}
-
-.camera {
-  background-color: transparent;
-  position: absolute;
-  color: white;
-  margin: 0;
-  padding: 0;
-  height: 3vh;
-  aspect-ratio: 1/1;
-  left: 0;
-  bottom: 0;
-} */
-
-/* Center Bar */
-/* .center-bar {
-  display: flex;
-  width: 100vh;
-  flex: 1.2;
-  justify-content: center;
-  margin-top: 15vh;
-}
-.city-container {
-  position: relative;
-  display: flex;
-  aspect-ratio: 7/5;
-  max-width: 70vw;
-  padding-top: 5vh;
-  align-items: flex-end;
-  max-width: 96vw;
-}
-.city-weather {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 84%;
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-  z-index: 10;
-  pointer-events: none; 
-} */
-
-/* Bottom Bar */
-/* .bottom-bar {
-  width: 96vw;
-  max-height: 40vh;
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  border-bottom: solid 2px white;
-  margin-bottom: 2vh;
-  align-items: flex-end;
-  overflow: hidden;
-  background: linear-gradient(
-    rgba(255,255,255,0), 
-    rgba(255,255,255,0), 
-    rgba(255,255,255,0), 
-    rgba(255,255,255,0), 
-    rgba(255,255,255,0), 
-    rgba(255,255,255,0), 
-    rgba(255,255,255,0), 
-    rgba(255,255,255,0), 
-    rgba(255,255,255,0), 
-    rgba(255,255,255,0), 
-    rgba(255,255,255,0.2), rgba(255,255,255,0.6));
-}
-.title-container {
-  width: 30%;
-  max-height: 40vh;
-  display: flex;
-  justify-content: center;
-  height: 20vw;
-} 
-.ground {
-  align-self: flex-end;
-  max-height: 40vh;
-  max-height: 50%;
-  overflow: hidden;
-}
-.block-menu-container {
-  display: flex;
-  position: relative;
-  justify-content: center; 
-  align-items: flex-end; 
-  flex-direction: row;
-  flex-flow: row;
-  width: 35%; 
-  height: 20vw;
-  max-height: 40vh;
-}
-.block-container {
-  display: flex;
-  flex-flow: row nonwrap;
-  justify-content: center; 
-  align-items: flex-end; 
-  height: 60%; 
-  max-height: 20vh;
-  width: 100%; 
-  max-height: 40vh;
-}
-.block-menu img {
-  display: block;
-  position: absolute;
-}
-
-.shadow {
-  filter: drop-shadow(2% 2% #ffffff);
-}
-
-.city {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box; 
-}
-
-
-#button, #button:hover,
-#button:active,
-#button:focus {
-  outline: none;
-  border: none;
-  box-shadow: none;
-  background-color: none;
-} 
-
-.interactive {
-  cursor: pointer;
-}
-.interactive:hover {
-  transform: scale(1.1vw);
-}
-
-.sunbox.interactive:hover {
-  transform: translateX(27vh) scale(1.1);
-} */
-
-/* @media all and (max-width: 760px) {
-  .sunbox {
-    right: 20vw;
-    bottom : 75vh;
-    transform: translateX(0vw);
-    width: 4vh !important;
-    height: 4vh !important; 
-    z-index: 10;
-  }
-  .sunbox.interactive:hover {
-    transform: translateX(0vh) scale(1.1);
-  }
-  .sun {
-    right: 0vw;
-    top: 0vh;
-    width: 2.5vh;
-    height: 2.5vh;
-  }
-
-  .camera {
-    height: 2.5vh;
-  }
-
-  .city-container {
-    max-width: 77vw;
-    max-height: 55vw;
-    z-index: 10;
-    align-items: flex-end;
-    justify-content: center;
-  }
-
-  .floor {
-    width: 100%;
-    border: solid 1px red;
-    overflow: hidden;
-  }
-  .bottom-bar {
-    position: absolute;
-    height: 50vh;
-    bottom: 0;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    border-bottom: 0px;
-    margin-bottom: 5vw;
-  }
-
-  .title-container {
-    width: 90vw;
-    height: 14vh;
-    border-bottom: solid 0.3vh white;
-  } 
-
-  .block-menu-container {
-    height: 14vh;
-    border-bottom: solid 0.3vh white;
-    width: 90vw;
-  }
-  .block-container {
-    width: 100vw;
-    height: 12vh;
-  }
-} */
