@@ -75,4 +75,8 @@
   .undo {
     height: 2.5vh;
   }
+  .city {
+    height: 66.3%;
+    top: 21%;
+  }
 }

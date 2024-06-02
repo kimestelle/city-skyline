@@ -195,11 +195,11 @@ html, body {
   .sunbox {
     right: 20vw;
     top: 20%;
-    transform: translateX(-2vw);
+    transform: translateX(-4vw);
   }
 
   .sunbox.interactive:hover {
-    transform: translateX(-2vw) scale(1.1);
+    transform: translateX(-4vw) scale(1.1);
   }
 
   .sun {
@@ -213,12 +213,17 @@ html, body {
     height: 2.5vh;
   }
 
+  .center-bar {
+    flex: 1;
+  }
+
   .city-container {
     max-width: 77vw;
-    max-height: 55vw;
+    max-height: 30vh;;
     z-index: 10;
     align-items: flex-end;
     justify-content: center;
+    top: 0;
   }
 
   .floor {
