@@ -227,6 +227,7 @@ html, body {
   }
 
   .center-bar {
+    top: 0svh;
     align-items: center;
     height: 55svh;
     max-height: 55svh;
@@ -246,6 +247,7 @@ html, body {
   }
 
   .bottom-bar {
+    top: 55svh;
     height: 45svh;
     max-height: 45svh;
     flex-direction: column;
