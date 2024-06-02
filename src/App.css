@@ -200,30 +200,29 @@ html, body {
   .App {
     max-height: 100svh;
     height: 100svh;
-    max-height: -webkit-fill-available;
     justify-content: flex-start;
     border: 1px solid red;
     overflow: hidden;
   }
   .sunbox {
-    right: 20vw;
-    transform: translateX(-4vw) translateY(-3vh);
+    right: 20svw;
+    transform: translateX(-4svw) translateY(-3svh);
   }
 
   .sunbox.interactive:hover {
-    transform: translateX(-4vw) translateY(-3vh) scale(1.1);
+    transform: translateX(-4vw) translateY(-3svh) scale(1.1);
   }
 
   .sun {
     right: 0vw;
     top: 0vh;
-    width: 2.5vh;
-    height: 2.5vh;
+    width: 2.5svh;
+    height: 2.5svh;
     opacity: 70%;
   }
 
   .camera {
-    height: 2.5vh;
+    height: 2.5svh;
   }
 
   .center-bar {
