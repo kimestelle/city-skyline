@@ -198,6 +198,8 @@ html, body {
 /* Responsive Styles */
 @media all and (max-width: 760px) {
   .App {
+    max-height: 100vh;
+    height: 100vh;
     justify-content: flex-end;
     border: 1px solid red;
   }
@@ -223,8 +225,9 @@ html, body {
 
   .center-bar {
     align-items: center;
-    height: 52%;
-    max-height: 52%;
+    height: 52vh;
+    max-height: 52vh;
+    border: 1px solid red;
   }
 
   .city-container {
