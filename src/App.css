@@ -201,8 +201,8 @@ html, body {
     max-height: 100svh;
     height: 100svh;
     top: 0;
+    bottom: 0;
     justify-content: flex-start;
-    border: 1px solid red;
     overflow: hidden;
   }
   .sunbox {
@@ -230,7 +230,6 @@ html, body {
     align-items: center;
     height: 55svh;
     max-height: 55svh;
-    border: 1px solid red;
     flex: 1;
   }
 
@@ -242,7 +241,6 @@ html, body {
     aspect-ratio: 7/5;
     z-index: 10;
     align-items: flex-end;
-    border: 1px solid red;
     justify-content: center;
     top: 0;
   }
@@ -256,13 +254,12 @@ html, body {
     padding-bottom: 3svh;
     border-bottom: 0px;
     margin-bottom: 0px;
-    border: 1px solid red;
     flex: 1;
   }
 
   .title-container {
-    height: 14svh;
-    max-height: 14svh;
+    height: 13svh;
+    max-height: 13svh;
     width: 88svw;
     border-bottom: solid 0.2svh white;
     justify-content: center;
@@ -274,8 +271,8 @@ html, body {
   }
 
   .block-menu-container {
-    height: 14svh;
-    max-height: 14svh;
+    height: 13svh;
+    max-height: 13svh;
     flex: 1;
     width: 88svw;
     overflow: hidden;
