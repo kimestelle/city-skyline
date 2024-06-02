@@ -24,9 +24,9 @@ html, body {
 /* Sunbox */
 .sunbox {
   position: absolute;
-  top: min(18vh, 18vw);
+  top: 17vh;
   right: 50vw;
-  transform: translateX(22vh);
+  transform: translateX(27vh);
   width: 3vh !important;
   height: 3vh !important;
   background-color: transparent;
@@ -36,7 +36,7 @@ html, body {
 }
 
 .sunbox.interactive:hover {
-  transform: translateX(22vh) scale(1.2);
+  transform: translateX(27vh) scale(1.2);
 }
 
 /* Sun */
@@ -69,19 +69,19 @@ html, body {
 /* Center Bar */
 .center-bar {
   display: flex;
-  width: 100vh;
-  flex: 1.2;
+  width: 100vw;
+  flex: 1.3;
   justify-content: center;
-  margin-top: 15vh;
+  align-items: flex-end;
+  border: 1px solid red;
 }
 
 /* City Container */
 .city-container {
   position: relative;
   display: flex;
-  aspect-ratio: 7/5;
-  max-width: 70vw;
-  padding-top: 5vh;
+  width: min(70vw, 70vh);
+  height: min(50vw, 50vh);
   align-items: flex-end;
 }
 
@@ -194,7 +194,6 @@ html, body {
 @media all and (max-width: 760px) {
   .sunbox {
     right: 20vw;
-    top: 20%;
     transform: translateX(-4vw);
   }
 
@@ -214,12 +213,13 @@ html, body {
   }
 
   .center-bar {
-    flex: 1;
+    align-items: center;
   }
 
   .city-container {
-    max-width: 77vw;
-    max-height: 30vh;;
+    width: 77vw;
+    height: 55vw;
+    aspect-ratio: 7/5;
     z-index: 10;
     align-items: flex-end;
     justify-content: center;
@@ -233,7 +233,6 @@ html, body {
   }
 
   .bottom-bar {
-    position: absolute;
     width: 90vw;
     height: 50vh;
     bottom: 0;
@@ -249,6 +248,7 @@ html, body {
     width: 100%;
     height: 14vh;
     border-bottom: solid 0.2vh white;
+    justify-content: center;
   }
 
   .block-menu-container {
