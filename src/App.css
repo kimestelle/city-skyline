@@ -228,31 +228,32 @@ html, body {
 
   .center-bar {
     align-items: center;
-    height: 52%;
-    max-height: 52%;
+    height: 55svw;
+    max-height: 50svh;
     border: 1px solid red;
     flex: 1;
   }
 
   .city-container {
-    width: 77vw;
-    height: 55vw;
-    height: 55vw;
-    width: 77vw;
+    height: 55svw;
+    max-height: 50svh;
+    width: 77svw;
+    max-width: 77svw;
     aspect-ratio: 7/5;
     z-index: 10;
     align-items: flex-end;
+    border: 1px solid red;
     justify-content: center;
     top: 0;
   }
 
   .bottom-bar {
-    height: 48%;
-    max-height: 48%;
+    height: 45svh;
+    max-height: 45svh;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    padding-bottom: 5vw;
+    padding-bottom: 3svh;
     border-bottom: 0px;
     margin-bottom: 0px;
     border: 1px solid red;
@@ -260,8 +261,8 @@ html, body {
   }
 
   .title-container {
-    height: 14vh;
-    max-height: 14vh;
+    height: 14svh;
+    max-height: 14svh;
     width: 88vw;
     border-bottom: solid 0.2vh white;
     justify-content: center;
@@ -273,8 +274,8 @@ html, body {
   }
 
   .block-menu-container {
-    height: 14vh;
-    max-height: 14vh;
+    height: 14svh;
+    max-height: 14svh;
     flex: 1;
     width: 88vw;
     overflow: hidden;
@@ -282,7 +283,7 @@ html, body {
 
   .block-container {
     width: 100vw;
-    height: 12vh;
+    height: 80%;
     border-bottom: solid 0.2vh white;
   }
 }
