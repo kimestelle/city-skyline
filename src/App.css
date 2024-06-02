@@ -202,6 +202,7 @@ html, body {
     height: 100vh;
     justify-content: flex-end;
     border: 1px solid red;
+    overflow: hidden;
   }
   .sunbox {
     right: 20vw;
@@ -228,13 +229,14 @@ html, body {
     height: 52%;
     max-height: 52%;
     border: 1px solid red;
+    flex: 1;
   }
 
   .city-container {
     width: 77vw;
     height: 55vw;
-    max-height: 50vh;
-    max-width: 70vh;
+    height: 55vw;
+    width: 77vw;
     aspect-ratio: 7/5;
     z-index: 10;
     align-items: flex-end;
@@ -254,6 +256,7 @@ html, body {
     border-bottom: 0px;
     margin-bottom: 0px;
     border: 1px solid red;
+    flex: 1;
 
   }
 
