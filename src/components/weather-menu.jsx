@@ -1,8 +1,9 @@
-import clouds from "../assets/weather/clouds.svg";
-import fog from "../assets/weather/fog.svg";
-import hearts from "../assets/weather/hearts.svg";
+import clouds from '../assets/weather/clouds.svg';
+import fog from '../assets/weather/fog.svg';
+import hearts from '../assets/weather/hearts.svg';
 import './weather-menu.css';
 import '../App.css';
+import PropTypes from 'prop-types';
 
 const blockImages = [
   { name: 'fog', src: fog, className: 'fog' },
@@ -10,12 +11,24 @@ const blockImages = [
   { name: 'hearts', src: hearts, className: 'hearts' }
 ];
 
-const WeatherMenu = () => (
-  <div className="block-container">
-    {blockImages.map((img, index) => (
-      <img src={img.src} key={index} alt={img.name} className={`block ${img.className}`} />
-    ))}
-  </div>
-);
+const WeatherMenu = ({ onWeatherChange }) => {
+  return (
+    <div className="block-container">
+      {blockImages.map((img, index) => (
+        <img
+          src={img.src}
+          key={index}
+          alt={img.name}
+          className={`block ${img.className}`}
+          onClick={() => onWeatherChange(img.name)}
+        />
+      ))}
+    </div>
+  );
+};
+
+WeatherMenu.propTypes = {
+  onWeatherChange: PropTypes.func,
+};
 
 export default WeatherMenu;

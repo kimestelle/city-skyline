@@ -6,20 +6,18 @@ import '../App.css';
 import sun from "../assets/sun.svg";
 import moon from "../assets/moon.svg";
 
-const Sky = () => {
+const Sky = ({onDayChange}) => {
 // Setup for color
     const [hour, setHour] = useState(0);
     const [color, setColor] = useState(skyColors[0].color);
 // Update hour 
     const handleDayChange = () => {
-        if (hour < 6 || hour > 19){
-            setHour(12);
-            setColor(skyColors[12].color);
-        } else {
-            setHour(0);
-            setColor(skyColors[0].color);
-        }
+        const newHour = hour < 6 || hour > 19 ? 12 : 0;
+        setHour(newHour);
+        setColor(skyColors[newHour].color);
+        onDayChange(newHour >= 6 && newHour <= 19);
     };
+
 // Timer for incrementing
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -28,6 +26,7 @@ const Sky = () => {
         }, 10000);
         console.log(hour);
         console.log(color);
+        onDayChange(hour >= 6 && hour <= 19);
         return () => {
           clearTimeout(timer);
         };
@@ -46,7 +45,8 @@ const Sky = () => {
 }
 
 Sky.propTypes = {
-    initHour: PropTypes.any
+    initHour: PropTypes.any,
+    onDayChange: PropTypes.func.isRequired,
   }
 
 export default Sky;

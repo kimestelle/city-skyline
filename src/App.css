@@ -73,7 +73,7 @@ html, body {
   flex: 1.3;
   justify-content: center;
   align-items: flex-end;
-  border: 1px solid red;
+  overflow: hidden;
 }
 
 /* City Container */
@@ -83,6 +83,7 @@ html, body {
   width: min(70vw, 70vh);
   height: min(50vw, 50vh);
   align-items: flex-end;
+  overflow: hidden;
 }
 
 /* City Weather */
@@ -121,8 +122,8 @@ html, body {
   height: 20vw;
 }
 
-/* Ground */
-.ground {
+/* Title */
+.title {
   align-self: flex-end;
   max-height: 50%;
 }
@@ -197,15 +198,16 @@ html, body {
 /* Responsive Styles */
 @media all and (max-width: 760px) {
   .App {
+    justify-content: flex-end;
     border: 1px solid red;
   }
   .sunbox {
     right: 20vw;
-    transform: translateX(-4vw);
+    transform: translateX(-4vw) translateY(-3vh);
   }
 
   .sunbox.interactive:hover {
-    transform: translateX(-4vw) scale(1.1);
+    transform: translateX(-4vw) translateY(-3vh) scale(1.1);
   }
 
   .sun {
@@ -221,13 +223,15 @@ html, body {
 
   .center-bar {
     align-items: center;
-    max-height: 50vh;
+    height: 52%;
+    max-height: 52%;
   }
 
   .city-container {
     width: 77vw;
     height: 55vw;
     max-height: 50vh;
+    max-width: 70vh;
     aspect-ratio: 7/5;
     z-index: 10;
     align-items: flex-end;
@@ -236,32 +240,43 @@ html, body {
   }
 
   .bottom-bar {
-    width: 90vw;
-    height: 50vh;
-    bottom: 0;
+    height: 48vh;
+    max-height: 48vh;
+    width: 100vw;
+    max-width: 100vw;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    padding-bottom: 5vw;
     border-bottom: 0px;
-    margin-bottom: 5vw;
-    background: transparent;
+    margin-bottom: 0px;
+    border: 1px solid red;
+
   }
 
   .title-container {
-    width: 100%;
     height: 14vh;
+    max-height: 14vh;
+    width: 88vw;
     border-bottom: solid 0.2vh white;
     justify-content: center;
   }
 
+  .title {
+    align-self: flex-end;
+    height: 50%;
+  }
+
   .block-menu-container {
     height: 14vh;
-    border-bottom: solid 0.2vh white;
-    width: 100%;
+    max-height: 14vh;
+    flex: 1;
+    width: 88vw;
   }
 
   .block-container {
     width: 100vw;
     height: 12vh;
+    border-bottom: solid 0.2vh white;
   }
 }

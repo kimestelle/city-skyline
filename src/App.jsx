@@ -7,7 +7,7 @@ import title from './assets/title.svg';
 
 import blockImages from './components/block-menu.jsx';
 import WeatherMenu from './components/weather-menu.jsx';
-// import Snow from './weather/snow.jsx';
+import Weather from './weather/weather.jsx';
 import City from './city.jsx';
 import Screenshot from './screenshot.jsx'
 import Sky from './components/sky.jsx';
@@ -16,6 +16,7 @@ import Sky from './components/sky.jsx';
 function App() {
   const toCaptureRef = useRef(null);
   const [blockType, setType] = useState(null);
+  const [weatherState, setWeatherState] = useState({ weather: null, day: true });
 
   var blockMap = blockImages
   const handleTypeChange = (newType) => {
@@ -25,6 +26,19 @@ function App() {
   const handleUndo = () => {
   }
 
+  const handleDayChange = (dayChange) => {
+    setWeatherState((prevWeatherState) => ({
+      ...prevWeatherState,
+      day: dayChange,
+    }));
+  };
+
+  const handleWeatherChange = (weatherChange) => {
+    setWeatherState((prevWeatherState) => ({
+      ...prevWeatherState,
+      weather: weatherChange,
+    }));
+  };
 
   return (
     <div className="App" ref={toCaptureRef} onContextMenu={(e)=> e.preventDefault()}>
@@ -36,21 +50,21 @@ function App() {
             <City blockType={blockType} onUndo={handleUndo}/>
             <img src={ground} className="floor"/>
             <div className="city-weather">
-               {/* <Snow/> */}
+               <Weather weather={weatherState.weather} day={weatherState.day}/>
             </div>
             <Screenshot targetRef={toCaptureRef}/>
         </div>
-        <Sky/>
+        <Sky onDayChange={handleDayChange}/>
       </div>
 
 
       {/* Bottom bar: menus and title letters */}
       <div className="bottom-bar">
         <div className="block-menu-container">
-          <WeatherMenu/>  
+          <WeatherMenu onWeatherChange={handleWeatherChange}/>  
         </div>
         <div className="title-container">
-          <img src={title} className="ground"/>
+          <img src={title} className="title"/>
         </div>
         <div className="block-menu-container">
         <div className="block-container" >
