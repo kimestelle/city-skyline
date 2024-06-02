@@ -1,7 +1,8 @@
 .tornado {
     position: fixed;
     height:8vw;
-    bottom: 4.2vw;
+    max-height:15vh;
+    bottom: calc(1.4vw + 2vh);
     left: 48vw;
     cursor: pointer;
 }
@@ -34,7 +35,7 @@
 @keyframes moveToBottomRight {
     0% {
         height:8vw;
-        bottom: 4.2vw;
+        bottom: calc(1.4vw + 2vh);
         left: 48vw;
     }
     100% {
@@ -104,12 +105,12 @@
 @keyframes moveBack {
     0% {
         left: 50vw;
-        bottom: 4.2vw;
+        bottom: calc(1.4vw + 2vh);
         height: 1vh;
     }
     100% {
         left: 48vw;
-        bottom: 4.2vw;
+        bottom: calc(1.4vw + 2vh);
         height: min(16vh, 8vw);
     }
 }
@@ -133,8 +134,8 @@
 @media all and (max-width: 760px) {
     .tornado {
         height:5.5vh;
-        bottom: 16.5vh;
-        left: 47.5vw;
+        bottom: calc(5vw + 14vh);
+        left: calc(50vw - 1.3vh);
         z-index: 10;
     }
 

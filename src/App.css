@@ -1,4 +1,299 @@
+/* Global Styles */
+html, body {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
 .App {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 15s ease;
+  flex-direction: column;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Sunbox */
+.sunbox {
+  position: absolute;
+  top: min(18vh, 18vw);
+  right: 50vw;
+  transform: translateX(22vh);
+  width: 3vh !important;
+  height: 3vh !important;
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.sunbox.interactive:hover {
+  transform: translateX(22vh) scale(1.2);
+}
+
+/* Sun */
+.sun {
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  right: 2vw;
+  border: transparent;
+  cursor: pointer;
+  width: 3vh;
+  height: 3vh;
+  z-index: 11;
+  pointer-events: none;
+}
+
+/* Camera */
+.camera {
+  background-color: transparent;
+  position: absolute;
+  color: white;
+  margin: 0;
+  padding: 0;
+  height: 3vh;
+  aspect-ratio: 1/1;
+  left: 0;
+  bottom: 0;
+}
+
+/* Center Bar */
+.center-bar {
+  display: flex;
+  width: 100vh;
+  flex: 1.2;
+  justify-content: center;
+  margin-top: 15vh;
+}
+
+/* City Container */
+.city-container {
+  position: relative;
+  display: flex;
+  aspect-ratio: 7/5;
+  max-width: 70vw;
+  padding-top: 5vh;
+  align-items: flex-end;
+}
+
+/* City Weather */
+.city-weather {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 84%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Bottom Bar */
+.bottom-bar {
+  width: 96vw;
+  max-height: 40vh;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  border-bottom: solid 2px white;
+  margin-bottom: 2vh;
+  align-items: flex-end;
+  overflow: hidden;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 1)
+  );
+}
+
+/* Title Container */
+.title-container {
+  width: 30%;
+  max-height: 40vh;
+  display: flex;
+  justify-content: center;
+  height: 20vw;
+}
+
+/* Ground */
+.ground {
+  align-self: flex-end;
+  max-height: 50%;
+  overflow: hidden;
+}
+
+/* Block Menu Container */
+.block-menu-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: row;
+  flex-flow: row;
+  width: 35%;
+  height: 20vw;
+  max-height: 40vh;
+}
+
+/* Block Container */
+.block-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  height: 60%;
+  width: 100%;
+  max-height: 40vh;
+}
+
+/* Block Menu */
+.block-menu img {
+  display: block;
+  position: absolute;
+}
+
+/* Shadow */
+.shadow {
+  filter: drop-shadow(2% 2% #ffffff);
+}
+
+/* City */
+.city {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Button Styles */
+#button,
+#button:hover,
+#button:active,
+#button:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background-color: none;
+}
+
+/* Interactive Elements */
+.interactive {
+  cursor: pointer;
+}
+
+.interactive:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Styles */
+@media all and (max-width: 760px) {
+  .sunbox {
+    right: 20vw;
+    top: 20%;
+    transform: translateX(-2vw);
+  }
+
+  .sunbox.interactive:hover {
+    transform: translateX(-2vw) scale(1.1);
+  }
+
+  .sun {
+    right: 0vw;
+    top: 0vh;
+    width: 2.5vh;
+    height: 2.5vh;
+  }
+
+  .camera {
+    height: 2.5vh;
+  }
+
+  .city-container {
+    max-width: 77vw;
+    max-height: 55vw;
+    z-index: 10;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .floor {
+    width: 100%;
+    border: solid 1px red;
+    overflow: hidden;
+  }
+
+  .bottom-bar {
+    position: absolute;
+    height: 50vh;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 0px;
+    margin-bottom: 5vw;
+  }
+
+  .title-container {
+    width: 90vw;
+    height: 14vh;
+    border-bottom: solid 0.3vh white;
+  }
+
+  .block-menu-container {
+    height: 14vh;
+    border-bottom: solid 0.3vh white;
+    width: 90vw;
+  }
+
+  .block-container {
+    width: 100vw;
+    height: 12vh;
+  }
+}
+
+/* .App {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -24,11 +319,11 @@ html, body {
   right: 50vw;
   transform: translateX(27vh);
   width: 4vh !important;
-  height: 4vh !important; /* Ensure it remains square */
+  height: 4vh !important; 
   background-color: transparent;
   border: transparent;
-  cursor: pointer; /* Optional: change cursor to indicate it's clickable */
-  z-index: 10; /* Ensure it’s above other elements */
+  cursor: pointer; 
+  z-index: 10; 
 }
 
 .sun {
@@ -54,13 +349,13 @@ html, body {
   aspect-ratio: 1/1;
   left: 0;
   bottom: 0;
-}
+} */
 
 /* Center Bar */
-.center-bar {
+/* .center-bar {
   display: flex;
   width: 100vh;
-  flex: 1;
+  flex: 1.2;
   justify-content: center;
   margin-top: 15vh;
 }
@@ -68,8 +363,8 @@ html, body {
   position: relative;
   display: flex;
   aspect-ratio: 7/5;
-  min-width: 30vw;
   max-width: 70vw;
+  padding-top: 5vh;
   align-items: flex-end;
   max-width: 96vw;
 }
@@ -81,21 +376,34 @@ html, body {
   height: 84%;
   display: flex;
   justify-content: center;
-  align-items: center; /* Semi-transparent white background */
-  z-index: 10; /* Ensure it's above city-container */
-  pointer-events: none; /* Allow clicking through the overlay */
-}
+  align-items: center; 
+  z-index: 10;
+  pointer-events: none; 
+} */
 
 /* Bottom Bar */
-.bottom-bar {
+/* .bottom-bar {
   width: 96vw;
   max-height: 40vh;
   display: flex;
   flex: 1;
   flex-direction: row;
-  border-bottom: solid 3px white;
-  margin-bottom: calc(100vh-96vw);
+  border-bottom: solid 2px white;
+  margin-bottom: 2vh;
   align-items: flex-end;
+  overflow: hidden;
+  background: linear-gradient(
+    rgba(255,255,255,0), 
+    rgba(255,255,255,0), 
+    rgba(255,255,255,0), 
+    rgba(255,255,255,0), 
+    rgba(255,255,255,0), 
+    rgba(255,255,255,0), 
+    rgba(255,255,255,0), 
+    rgba(255,255,255,0), 
+    rgba(255,255,255,0), 
+    rgba(255,255,255,0), 
+    rgba(255,255,255,0.2), rgba(255,255,255,0.6));
 }
 .title-container {
   width: 30%;
@@ -108,15 +416,16 @@ html, body {
   align-self: flex-end;
   max-height: 40vh;
   max-height: 50%;
+  overflow: hidden;
 }
 .block-menu-container {
   display: flex;
   position: relative;
-  justify-content: center; /* Center blocks horizontally */
-  align-items: flex-end; /* Align blocks to the bottom */
+  justify-content: center; 
+  align-items: flex-end; 
   flex-direction: row;
   flex-flow: row;
-  width: 35%; /* Full width of bottom bar */
+  width: 35%; 
   height: 20vw;
   max-height: 40vh;
 }
@@ -164,9 +473,9 @@ html, body {
 
 .sunbox.interactive:hover {
   transform: translateX(27vh) scale(1.1);
-}
+} */
 
-@media all and (max-width: 760px) {
+/* @media all and (max-width: 760px) {
   .sunbox {
     right: 20vw;
     bottom : 75vh;
@@ -190,8 +499,8 @@ html, body {
   }
 
   .city-container {
-    max-width: 84vw;
-    max-height: 60vw;
+    max-width: 77vw;
+    max-height: 55vw;
     z-index: 10;
     align-items: flex-end;
     justify-content: center;
@@ -199,8 +508,9 @@ html, body {
 
   .floor {
     width: 100%;
+    border: solid 1px red;
+    overflow: hidden;
   }
-
   .bottom-bar {
     position: absolute;
     height: 50vh;
@@ -227,4 +537,4 @@ html, body {
     width: 100vw;
     height: 12vh;
   }
-}
+} */

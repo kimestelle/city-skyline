@@ -9,7 +9,6 @@ import tree from "../assets/blocks/tree.svg";
 import triangle from "../assets/blocks/triangle.svg";
 import sprite from "../assets/blocks/sprite.svg";
 import './block-menu.css';
-import '../App.css';
 
 
 const blockImages = [
