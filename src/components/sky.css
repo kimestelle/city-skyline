@@ -21,3 +21,14 @@
 .interactive:hover {
   transform: scale(1.1);
 }
+
+
+@media all and (max-width: 760px) {
+  .background{
+    top: auto;
+    bottom: auto;
+    height: 100svh;
+    max-height: 100svh:
+    width: 100svw;
+  }
+}
