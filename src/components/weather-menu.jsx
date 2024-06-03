@@ -12,6 +12,14 @@ const blockImages = [
 ];
 
 const WeatherMenu = ({ onWeatherChange }) => {
+  
+  const weatherChange = (weather) => {
+      onWeatherChange(weather);
+      setTimeout(() => {
+        onWeatherChange(null);
+      }, 60000); 
+  }
+  
   return (
     <div className="block-container">
       {blockImages.map((img, index) => (
@@ -20,7 +28,7 @@ const WeatherMenu = ({ onWeatherChange }) => {
           key={index}
           alt={img.name}
           className={`block ${img.className}`}
-          onClick={() => onWeatherChange(img.name)}
+          onClick={() => weatherChange(img.name)}
         />
       ))}
     </div>

@@ -198,6 +198,7 @@ html, body {
 /* Responsive Styles */
 @media all and (max-width: 760px) {
   .App {
+    justify-content: flex-start;
     margin: 0;
     padding-top: env(safe-area-inset-top);
     padding-right: env(safe-area-inset-right);
