@@ -5,7 +5,6 @@
     left: 0;
     right: 0;
     z-index: -2;
-    display: cover;
     transition: 30s ease; 
 }
 
@@ -20,19 +19,4 @@
 
 .interactive:hover {
   transform: scale(1.1);
-}
-
-@media all and (max-width: 760px) {
-  .background {
-    margin: 0;
-    padding-top: env(safe-area-inset-top);
-    padding-right: env(safe-area-inset-right);
-    padding-bottom: env(safe-area-inset-bottom);
-    padding-left: env(safe-area-inset-left);
-    max-height: 100svh;
-    min-height: 100svh;
-    height: 100svh;
-    max-height: -webkit-fill-available;
-    overflow: hidden;
-  }
 }

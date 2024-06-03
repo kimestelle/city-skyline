@@ -38,8 +38,6 @@ function App() {
 
   return (
     <div className="App" ref={toCaptureRef} onContextMenu={(e)=> e.preventDefault()}>
-
-    
       {/* Center bar: City, weather, undo and camera buttons */}
       <div className="center-bar">
         <div className="city-container">
