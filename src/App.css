@@ -206,9 +206,11 @@ html, body {
     max-height: 100svh;
     height: 100svh;
     max-height: -webkit-fill-available;
-    bottom: 100svh;
+    bottom: 0;
+    top: 0;
     justify-content: flex-start;
     overflow: hidden;
+    border: 1px solid red;
   }
   .sunbox {
     right: 20svw;
@@ -237,6 +239,7 @@ html, body {
     height: 55svh;
     max-height: 55svh;
     flex: 1;
+    border: 1px solid red;
   }
 
   .city-container {
@@ -262,6 +265,7 @@ html, body {
     border-bottom: 0px;
     margin-bottom: 0px;
     flex: 1;
+    border: 1px solid red;
   }
 
   .title-container {
