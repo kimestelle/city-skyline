@@ -16,7 +16,8 @@ import Sky from './components/sky.jsx';
 function App() {
   const toCaptureRef = useRef(null);
   const [blockType, setType] = useState(null);
-  const [weatherState, setWeatherState] = useState({ weather: null, day: true });
+  const [weather, setWeather] = useState(null);
+  const [day, setDay] = useState(true);
 
   var blockMap = blockImages
   const handleTypeChange = (newType) => {
@@ -27,18 +28,12 @@ function App() {
   }
 
   const handleDayChange = (dayChange) => {
-    setWeatherState((prevWeatherState) => ({
-      ...prevWeatherState,
-      day: dayChange,
-    }));
+    setDay(dayChange);
   };
 
   const handleWeatherChange = (weatherChange) => {
-    setWeatherState((prevWeatherState) => ({
-      ...prevWeatherState,
-      weather: weatherChange,
-    }));
-    console.log(weatherState);
+    setWeather(weatherChange);
+    console.log(weather);
   };
 
   return (
@@ -51,7 +46,7 @@ function App() {
             <City blockType={blockType} onUndo={handleUndo}/>
             <img src={ground} className="floor"/>
             <div className="city-weather">
-               <Weather weatherState={weatherState}/>
+               <Weather weather={weather} day={day}/>
             </div>
             <Screenshot targetRef={toCaptureRef}/>
         </div>

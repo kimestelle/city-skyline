@@ -19,6 +19,7 @@ const WeatherMenu = ({ onWeatherChange }) => {
         onWeatherChange(null);
       }, 60000); 
   }
+
   
   return (
     <div className="block-container">

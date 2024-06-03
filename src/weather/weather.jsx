@@ -1,4 +1,3 @@
-import {useEffect} from 'react';
 import Snow from './snow.jsx';
 import Rain from './rain.jsx';
 import Fog from './fog.jsx';
@@ -7,12 +6,7 @@ import '../components/weather-menu.css';
 import '../App.css';
 import PropTypes from 'prop-types';
 
-const Weather = ({ weatherState }) => {
-    const { weather, day } = weatherState || {};
-
-    useEffect(() => {
-      console.log("Weather updated:", weatherState);
-    }, [weatherState]);
+const Weather = ({ weather, day }) => {
   
     if (!weather) {
       return null;
@@ -31,10 +25,8 @@ const Weather = ({ weatherState }) => {
   };
   
   Weather.propTypes = {
-    weatherState: PropTypes.shape({
-      weather: PropTypes.string,
-      day: PropTypes.bool.isRequired,
-    }),
+    weather: PropTypes.string,
+    day: PropTypes.bool
   };
   
   export default Weather;
