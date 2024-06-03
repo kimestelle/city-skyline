@@ -200,7 +200,7 @@ html, body {
   .App {
     max-height: 100svh;
     height: 100svh;
-    top: 0svh;
+    max-height: -webkit-fill-available;
     bottom: 100svh;
     justify-content: flex-start;
     overflow: hidden;
