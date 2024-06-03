@@ -10,7 +10,6 @@ html, body {
   -moz-user-drag: none; /* Disable image dragging in Mozilla browsers */
   -ms-user-drag: none; /* Disable image dragging in Microsoft browsers */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  user-select: none;
 }
 
 .App {
@@ -202,7 +201,7 @@ html, body {
 /* Responsive Styles */
 @media all and (max-width: 760px) {
   .App {
-    /* justify-content: flex-start;
+    justify-content: flex-start;
     margin: 0;
     padding-top: env(safe-area-inset-top);
     padding-right: env(safe-area-inset-right);
@@ -213,14 +212,6 @@ html, body {
     height: 100svh;
     max-height: -webkit-fill-available;
     overflow: hidden;
-    border: 2px solid blue; */
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -2;
-    display: cover;
   }
   .sunbox {
     right: 20svw;
