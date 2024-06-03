@@ -212,9 +212,9 @@ html, body {
     padding-right: env(safe-area-inset-right);
     padding-bottom: env(safe-area-inset-bottom);
     padding-left: env(safe-area-inset-left);
-    max-height: 100vh;
-    min-height: 100vh;
-    height: 100vh;
+    max-height: 100svh;
+    min-height: 100svh;
+    height: 100svh;
     max-height: -webkit-fill-available;
     overflow: hidden;
   }
