@@ -208,7 +208,7 @@ html, body {
     height: 100svh;
     max-height: -webkit-fill-available;
     overflow: hidden;
-    border: 1px solid red;
+    border: 2px solid blue;
   }
   .sunbox {
     right: 20svw;
