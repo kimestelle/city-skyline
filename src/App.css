@@ -198,6 +198,10 @@ html, body {
 /* Responsive Styles */
 @media all and (max-width: 760px) {
   .App {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     max-height: 100svh;
     height: 100svh;
     max-height: -webkit-fill-available;
