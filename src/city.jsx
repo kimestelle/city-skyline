@@ -1,7 +1,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import blockImages from './components/block-menu.jsx';
-import Tornado from "./tornado.jsx";
 import './city.css'; // Import the CSS file for styling
 import PropTypes from 'prop-types';
 import Sprite from './components/sprite.jsx'
@@ -46,13 +45,12 @@ class Block {
   }
 }
 
-function City ({blockType}) {
+function City ({blockType, tornado}) {
 const [blocks, setBlocks] = useState([]);
 const currentBlockRef = useRef(null);
 const containerRef = useRef(null);
 const intervalRef = useRef(null);
 const [currentBlockHeight, setCurrentBlockHeight] = useState(5);
-const [tornado, setTornado] = useState(false);
 const [touchDevice, setTouchDevice] = useState(false);
 
 useEffect(() => {
@@ -70,9 +68,9 @@ const handleUndo = () => {
   setBlocks(copyArr);
 }
 
-const handleTornado = () => {
+useEffect(() => {
+  if (tornado) {
   console.log('TORNADOOOOO');
-  setTornado(true);
   blocks.sort((a, b) => a.x - b.x);
   let index = 0;
   let counter = 0.00;
@@ -101,7 +99,6 @@ const handleTornado = () => {
       const updatedBlocks = blocks.filter(block => block.name !== 'sprite');
       setBlocks(updatedBlocks);
       blocks.splice(0, blocks.length)
-      setTornado(false);
       console.log('tornado done');
       console.log(blocks);
       clearInterval(spliceInterval);
@@ -110,7 +107,7 @@ const handleTornado = () => {
     spliceCountDown++;
   }
   }, 1500);
-}
+}}, [tornado]);
 
 const instantiateBlock = (e) => {
   if(!blockType) return;
@@ -171,7 +168,6 @@ const handleTouchEnd = () => {
 
 return (
   <>
-  <Tornado onTornado={handleTornado}/>
   <div
     className={tornado ? "city notouch" : "city"}
     ref={containerRef}
@@ -223,6 +219,7 @@ return (
 
 City.propTypes = {
   blockType: PropTypes.string,
+  tornado: PropTypes.bool,
   block: PropTypes.any,
   onUndo: PropTypes.func,
   blockImage: PropTypes.shape({

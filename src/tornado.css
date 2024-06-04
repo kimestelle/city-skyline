@@ -1,9 +1,10 @@
 .tornado {
-    position: fixed;
+    position: absolute;
     height:8vw;
     max-height:15vh;
-    bottom: calc(1.4vw + 2vh);
-    left: 48vw;
+    bottom: 3.6vh;
+    left: 50vw;
+    transform: translateX(-29%);
     cursor: pointer;
 }
 
@@ -16,19 +17,12 @@
     animation: flip-with-scale 0.3s infinite;
 }
 
-.tornado.move {
-    animation: flip-with-scale 0.3s infinite;
-    animation-fill-mode: forwards;
-    transition: 1s ease-in; /* Faster transition */
-    pointer-events: none;
-}
-
 @keyframes flip-with-scale {
     0% {
-        transform: perspective(200px) scaleX(1);
+        transform: translateX(-29%) perspective(200px) scaleX(1);
     }
     100% {
-        transform: perspective(200px) scaleX(-1);
+        transform: translateX(-29%) perspective(200px) scaleX(-1);
     }
 }
 
@@ -39,8 +33,8 @@
         left: 48vw;
     }
     100% {
-        left: 100%;
-        bottom: 6vw;
+        left: 120%;
+        bottom: 15vw;
         height: min(14vh, 12vw);
     }
 }
@@ -52,52 +46,52 @@
         height: 6vw;
     }
     100% {
-        left: 0%;
-        bottom: 16%;
-        height: min(12vh, 10vw);
+        left: calc(50vw - 35vh);
+        bottom: min(50vw, 50vh);
+        height: min(10vh, 8vw);
     }
 }
 
 @keyframes moveLeftToRight {
     0% {
-        left: 0%;
-        bottom: 16%;
-        height: min(12vh, 10vw);
+        left: calc(50vw - 35vh);
+        bottom: min(50vw, 50vh);
+        height: min(10vh, 8vw);
     }
 
     20% {
-        left: calc((100% - min(16vh, 8vw)) * 3 / 10);
-        bottom: 16%;
+        left: calc(50vw - 30vh);
+        bottom: min(50vw, 50vh);
         height: min(20vh, 13vw);
     }
 
     40% {
-        left: calc((100% - min(16vh, 8vw)) * 2/ 5);
-        bottom: 16%;
+        left: calc(50vw - 10vh);
+        bottom: min(50vw, 50vh);
         height: min(23vh, 17vw);
     }
 
     50% {
-        left: calc((100% - min(16vh, 8vw)) / 2);
-        bottom: 16%;
+        left: calc(50vw - 5vh);
+        bottom: min(50vw, 50vh);
         height: min(24vh, 18vw);
     }
 
     60% {
-        left: calc((100% - min(16vh, 8vw)) * 3 / 5);
-        bottom: 16%;
+        left: calc(50vw + 5vh);
+        bottom: min(50vw, 50vh);
         height: min(23vh, 17vw);
     }
 
     70% {
-        left: calc((100% - min(16vh, 8vw)) * 7 / 10);
-        bottom: 16%;
+        left: calc(50vw + 20vh);
+        bottom: min(50vw, 50vh);
         height: min(21vh, 14vw);
     }
 
     100% {
-        left: 100%;
-        bottom: 16%;
+        left: calc(50vw + 32vh);
+        bottom: min(50vw, 50vh);
         height: 5%;
     }
 }
@@ -135,7 +129,7 @@
     .tornado {
         height:5.5svh;
         bottom: 17svh;
-        left: calc(50svw - 1.3svh);
+        left: 50svw;
         z-index: 10;
     }
 
@@ -143,10 +137,10 @@
         0% {
             height:5.5svh;
             bottom: 17svh;
-            left: 47.5svw;
+            left: 50svw;
         }
         100% {
-            left: 100%;
+            left: 120%;
             bottom: 30svh;
             height: 7svh;
         }
@@ -161,7 +155,7 @@
         100% {
             height:5.5svh;
             bottom: 17svh;
-            left: calc(50svw - 1.3svh);
+            left: 50svw;
         }
     }
 }

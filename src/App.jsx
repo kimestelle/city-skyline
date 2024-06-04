@@ -11,6 +11,7 @@ import Weather from './weather/weather.jsx';
 import City from './city.jsx';
 import Screenshot from './screenshot.jsx'
 import Sky from './components/sky.jsx';
+import Tornado from './tornado.jsx'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
   const [blockType, setType] = useState(null);
   const [weather, setWeather] = useState(null);
   const [day, setDay] = useState(true);
+  const [tornado, setTornado] = useState(false);
 
   var blockMap = blockImages
   const handleTypeChange = (newType) => {
@@ -36,18 +38,27 @@ function App() {
     console.log(weather);
   };
 
+  const handleTornado = () => {
+    setTornado(true);
+    console.log('tornado triggered')
+    setTimeout(() => {
+      setTornado(false);
+    }, 2500); 
+  };
+
   return (
     <div className="App" ref={toCaptureRef} onContextMenu={(e)=> e.preventDefault()}>
       {/* Center bar: City, weather, undo and camera buttons */}
       <div className="center-bar">
         <div className="city-container">
-            <City blockType={blockType} onUndo={handleUndo}/>
+            <City blockType={blockType} onUndo={handleUndo} tornado={tornado}/>
             <img src={ground} className="floor"/>
             <div className="city-weather">
                <Weather weather={weather} day={day}/>
             </div>
             <Screenshot targetRef={toCaptureRef}/>
         </div>
+        <Tornado onTornado={handleTornado}/>
         <Sky onDayChange={handleDayChange}/>
       </div>
 

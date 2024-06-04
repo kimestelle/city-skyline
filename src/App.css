@@ -83,8 +83,8 @@ html, body {
 .city-container {
   position: relative;
   display: flex;
-  width: min(70vw, 70vh);
   height: min(50vw, 50vh);
+  aspect-ratio: 7/5;
   align-items: flex-end;
 }
 
@@ -240,22 +240,22 @@ html, body {
   }
 
   .center-bar {
-    align-items: center;
+    align-items: flex-end;
     height: 55svh;
     max-height: 55svh;
     flex: 1;
+    border: solid 1px red;
   }
 
   .city-container {
     height: 55svw;
     max-height: 50svh;
-    width: 77svw;
-    max-width: 77svw;
     aspect-ratio: 7/5;
     z-index: 10;
     align-items: flex-end;
     justify-content: center;
     top: 0;
+    border: solid 1px blue;
   }
 
   .bottom-bar {
