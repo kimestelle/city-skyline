@@ -1,0 +1,71 @@
+.fogcloud {
+    position: absolute;
+    width: 125%;
+    height: 125%;
+    bottom: -100%;
+  }
+
+  .one {
+    left: 0;
+    animation: rotate1 30s linear infinite;
+  }
+
+  .two {
+    right: 0;
+    animation: rotate2 30s linear infinite;
+  }
+  
+  @keyframes rotate1 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+  @keyframes rotate2 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .heart {
+    position: absolute;
+    width: 80%;
+    bottom: -35%;
+    animation: heart 1s ease-in infinite;
+  }
+
+  @keyframes heart {
+    0% {
+      transform: scale(0.88);
+    }
+    
+    10%{
+      transform: scale(0.9);
+    }
+
+    20%{
+      transform: scale(0.9);
+    }
+
+    30%{
+      transform: scale(0.88);
+    }
+
+    50%{
+      transform: scale(0.95);
+    }
+
+    80%{
+      transform: scale(0.95);
+    }
+
+    100%{
+      transform: scale(0.88);
+    }
+  }

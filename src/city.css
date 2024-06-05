@@ -16,8 +16,8 @@
 .sprite {
     position: absolute;
     background-repeat: no-repeat;
-    animation: swapSvg 0.7s infinite;
-    content: url('./assets/walk2.svg'), url('./assets/walk4.svg'), url('./assets/walk1.svg'), url('./assets/aah.svg');
+    /* animation: swapSvg 0.7s infinite;
+    content: url('./assets/walk2.svg'), url('./assets/walk4.svg'), url('./assets/walk1.svg'), url('./assets/aah.svg'); */
     transition: left 0.5s ease-in-out, bottom 0.5s ease-in-out;
   }
 
@@ -31,7 +31,7 @@
     transform: scaleX(-1);
     }
   
-  @keyframes swapSvg {
+  /* @keyframes swapSvg {
     0% {
       background-image: url('./assets/walk2.svg');
     }
@@ -47,7 +47,7 @@
     100% {
       background-image: url('./assets/walk2.svg');
     }
-  }
+  } */
 
   .undo {
     background-color: transparent;

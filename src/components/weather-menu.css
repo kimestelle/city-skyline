@@ -11,4 +11,8 @@
   .block.hearts {
     height: 30%; /* small height */
   }
+
+  .block:hover {
+    transform: scale(1.1);
+  }
   
