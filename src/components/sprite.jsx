@@ -47,7 +47,7 @@ const Sprite = ({ index, x, height, tornado }) => {
       }, 500);
       return () => clearInterval(interval);
     }
-  }, [tornado, height, position, direction, speed, turn]);
+  }, [tornado, position, direction, speed, turn]);
 
   return (
     <object
