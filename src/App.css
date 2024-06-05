@@ -245,7 +245,6 @@ html, body {
     height: 55svh;
     max-height: 55svh;
     flex: 1;
-    border: solid 1px red;
   }
 
   .city-container {
@@ -257,7 +256,6 @@ html, body {
     align-items: flex-end;
     justify-content: center;
     top: 0;
-    border: solid 1px blue;
   }
 
   .bottom-bar {
