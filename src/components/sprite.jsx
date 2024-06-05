@@ -19,11 +19,12 @@ const Sprite = ({ index, x, height, tornado }) => {
   useEffect(() => {
     if (tornado) {
       let incr = height;
+      let timing = Math.random() * 200;
       const tornadoInterval = setInterval(() => {
         setY((prevY) => prevY + incr);
         setSpriteHeight(prevHeight => prevHeight * 4 / 5)
-        incr = (incr - 0.7) * 2;
-      }, 50);
+        incr = (incr - 0.8) * 2;
+      }, timing);
 
       return () => clearInterval(tornadoInterval);
     }
