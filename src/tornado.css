@@ -140,11 +140,68 @@
             left: 50svw;
         }
         100% {
-            left: 120%;
-            bottom: 30svh;
+            left: 150%;
+            bottom: 40svh;
             height: 7svh;
         }
     }
+
+    @keyframes moveToBottomLeft {
+    0% {
+        left: 150%;
+        bottom: 40svh;
+        height: 6vw;
+    }
+    100% {
+        left: 15svw;
+        bottom: calc(55svh + 7svw);
+        height: min(10svh, 8svw);
+    }
+}
+
+@keyframes moveLeftToRight {
+    0% {
+        left: 15svw;
+        bottom: calc(55svh + 7svw);
+        height: min(10vh, 8vw);
+    }
+
+    20% {
+        left: 20svw;
+        bottom: calc(55svh + 7svw);
+        height: min(20vh, 13vw);
+    }
+
+    40% {
+        left: 30svw;
+        bottom: calc(55svh + 7svw);
+        height: min(23vh, 17vw);
+    }
+
+    50% {
+        left: 45svw;
+        bottom: calc(55svh + 7svw);
+        height: min(24vh, 18vw);
+    }
+
+    60% {
+        left: 50svw;
+        bottom: calc(55svh + 7svw);
+        height: min(23vh, 17vw);
+    }
+
+    70% {
+        left: 60svw;
+        bottom: calc(55svh + 7svw);
+        height: min(21vh, 14vw);
+    }
+
+    100% {
+        left: 85svw;
+        bottom: calc(55svh + 7svw);
+        height: 5%;
+    }
+}
 
     @keyframes moveBack {
         0% {

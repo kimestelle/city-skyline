@@ -219,6 +219,7 @@ html, body {
     overflow: hidden;
   }
   .sunbox {
+    top: 18svh;
     right: 20svw;
     transform: translateX(-4svw) translateY(-3svh);
   }
@@ -249,7 +250,8 @@ html, body {
 
   .city-container {
     height: 55svw;
-    max-height: 50svh;
+    max-height: 45svh;
+    margin-bottom: 5svh;
     aspect-ratio: 7/5;
     z-index: 10;
     align-items: flex-end;
