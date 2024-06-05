@@ -50,7 +50,7 @@ const Sprite = ({ index, x, height, tornado }) => {
   }, [tornado, height, position, direction, speed, turn]);
 
   return (
-    <div
+    <object
       ref={index}
       className={tornado ? 'sprite ahh' : (direction === -1 ? 'sprite' : 'sprite reflect')}
       style={{
@@ -58,7 +58,7 @@ const Sprite = ({ index, x, height, tornado }) => {
         height: `${spriteHeight}%`,
         bottom: `${y}%`,
       }}
-    ></div>
+    ></object>
   );
 };
 
