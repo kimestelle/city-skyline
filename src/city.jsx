@@ -186,7 +186,7 @@ return (
         style={{
           position: 'absolute',
           left: `${block.x}%`,
-          bottom: `${block.y}%`,
+          bottom: `${block.y}svh`,
           height: `${block.height}%`,
           transform: 'translateX(-50%)',
           pointerEvents: 'none',
@@ -201,7 +201,7 @@ return (
         style={{
           position: 'absolute',
           left: `${currentBlockRef.current.x}%`,
-          bottom: `${currentBlockRef.current.y}%`,
+          bottom: `${currentBlockRef.current.y}svh`,
           height: `${currentBlockHeight}%`,
           opacity: '0.8',
           transform: 'translateX(-50%)',
