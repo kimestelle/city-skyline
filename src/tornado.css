@@ -1,9 +1,9 @@
 .tornado {
     position: absolute;
-    height:8vw;
-    max-height:15vh;
+    height:8svw;
+    max-height:15svh;
     bottom: 3.6vh;
-    left: 50vw;
+    left: 50svw;
     transform: translateX(-29%);
     cursor: pointer;
 }
