@@ -56,6 +56,7 @@ const Sprite = ({ index, x, height, tornado }) => {
       style={{
         left: `${position}%`,
         height: `${spriteHeight}%`,
+        width: `${spriteHeight * 3 / 7}%`,
         bottom: `${y}%`,
       }}
     ></object>

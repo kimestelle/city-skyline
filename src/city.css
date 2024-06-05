@@ -16,7 +16,6 @@
 
 .sprite {
     position: absolute;
-    aspect-ratio: 3/7;
     background-repeat: no-repeat;
     animation: swapSvg 0.7s infinite;
     content: url('./assets/walk2.svg'), url('./assets/walk4.svg'), url('./assets/walk1.svg'), url('./assets/aah.svg');
