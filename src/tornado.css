@@ -46,7 +46,7 @@
         height: 6vw;
     }
     100% {
-        left: calc(50vw - 35vh);
+        left: calc(50vw - 40vh);
         bottom: min(50vw, 50vh);
         height: min(10vh, 8vw);
     }
@@ -54,13 +54,13 @@
 
 @keyframes moveLeftToRight {
     0% {
-        left: calc(50vw - 35vh);
+        left: calc(50vw - 40vh);
         bottom: min(50vw, 50vh);
         height: min(10vh, 8vw);
     }
 
     20% {
-        left: calc(50vw - 30vh);
+        left: calc(50vw - 33vh);
         bottom: min(50vw, 50vh);
         height: min(20vh, 13vw);
     }
@@ -98,12 +98,12 @@
 
 @keyframes moveBack {
     0% {
-        left: 50vw;
+        left: 52svw;
         bottom: calc(1.4vw + 2vh);
         height: 1vh;
     }
     100% {
-        left: 48vw;
+        left: 50svw;
         bottom: calc(1.4vw + 2vh);
         height: min(16vh, 8vw);
     }
