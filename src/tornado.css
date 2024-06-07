@@ -46,17 +46,17 @@
         height: 6vw;
     }
     100% {
-        left: calc(50vw - 35vh);
+        left: calc(50vw - 30vh);
         bottom: min(50vw, 50vh);
-        height: min(8.5vh, 7vw);
+        height: min(8.5vh, 6vw);
     }
 }
 
 @keyframes moveLeftToRight {
     0% {
-        left: calc(50vw - 35vh);
+        left: calc(50vw - 30vh);
         bottom: min(50vw, 50vh);
-        height: min(8.5vh, 7vw);
+        height: min(8.5vh, 6vw);
     }
 
     20% {
@@ -98,7 +98,7 @@
 
 @keyframes moveBack {
     0% {
-        left: 50.5svw;
+        left: 50.2svw;
         bottom: calc(1.4vw + 2vh);
         height: 1vh;
     }
