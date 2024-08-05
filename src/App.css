@@ -24,9 +24,9 @@ html, body {
   user-select: none;
 }
 
-* {
+/* * {
   border: solid 0.5px red
-}
+} */
 
 h5 {
   position: relative;
