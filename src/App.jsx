@@ -65,12 +65,16 @@ function App() {
 
       {/* Bottom bar: menus and title letters */}
       <div className="bottom-bar">
+        {/* <div className='block-menu-directions-container'> */}
         <div className="block-menu-container">
           <WeatherMenu onWeatherChange={handleWeatherChange}/>  
         </div>
+        <h5>select weather</h5>
+        {/* </div> */}
         <div className="title-container">
           <img src={title} className="title"/>
         </div>
+        {/* <div className='block-menu-directions-container'> */}
         <div className="block-menu-container">
         <div className="block-container" >
           {blockMap.map((image, index) => (
@@ -78,6 +82,8 @@ function App() {
           ))}
         </div>
         </div>
+        <h5>select block</h5>
+        {/* </div> */}
       </div>
     </div>
   );
