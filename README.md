@@ -1,2 +1,2 @@
 # city-skyline
-interactive sandbox (click on the rightmost block, it's the coolest :-) www.estellekim.dev)
+interactive sandbox (click on the rightmost block, it's the coolest :-) www.estellekim.dev/playground)
