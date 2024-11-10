@@ -5,41 +5,59 @@ import PropTypes from 'prop-types';
 
 function Tornado({ onTornado }) {
     const [animationStage, setAnimationStage] = useState(0);
+    const [isIdle, setIsIdle] = useState(true);
+    const [rattleClass, setRattleClass] = useState('');
 
     useEffect(() => {
         let timer;
+
         if (animationStage === 1) {
+            setIsIdle(false);
             timer = setTimeout(() => {
                 setAnimationStage(2);
-            }, 300); 
+            }, 300);
         } else if (animationStage === 2) {
             timer = setTimeout(() => {
                 onTornado();
-                console.log('tornado queued')
                 setAnimationStage(3);
-            }, 700); 
+            }, 700);
         } else if (animationStage === 3) {
             timer = setTimeout(() => {
-                console.log('stage4')
                 setAnimationStage(4);
             }, 1000);
         } else if (animationStage === 4) {
             timer = setTimeout(() => {
                 setAnimationStage(5);
-            }, 1500); 
+                setIsIdle(true);
+            }, 1500);
         }
+
         return () => clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [animationStage]);
+    }, [animationStage, onTornado]);
+
+    useEffect(() => {
+        let idleTimer;
+        if (isIdle) {
+            idleTimer = setInterval(() => {
+                setRattleClass('rattle-animation');
+                setTimeout(() => {
+                    setRattleClass('');
+                }, 1000); // Matches the duration of the rattle animation (0.1s * 10)
+            }, 4000);
+        }
+
+        return () => clearInterval(idleTimer);
+    }, [isIdle]);
 
     const startAnimation = () => {
         setAnimationStage(1);
+        setIsIdle(false);
     };
 
     return (
         <img
             src={tornado}
-            className={`tornado interactive
+            className={`tornado interactive ${rattleClass}
                 ${animationStage === 1 ? 'move-to-bottom-right' : ''} 
                 ${animationStage === 2 ? 'move-to-bottom-left absolute' : ''} 
                 ${animationStage === 3 ? 'move-left-to-right absolute' : ''}
@@ -51,6 +69,6 @@ function Tornado({ onTornado }) {
 
 Tornado.propTypes = {
     onTornado: PropTypes.func,
-  };
+};
 
 export default Tornado;

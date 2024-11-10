@@ -218,3 +218,21 @@
         }
     }
 }
+@keyframes rattle {
+    0%, 100% {
+        transform: translateX(-30%);
+    }
+    25% {
+        transform: translateX(-25%);
+    }
+    50% {
+        transform: translateX(-30%);
+    }
+    75% {
+        transform: translateX(-25%);
+    }
+}
+
+.rattle-animation {
+    animation: rattle 0.1s linear 10;
+}

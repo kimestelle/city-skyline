@@ -76,11 +76,18 @@ function App() {
         </div>
         {/* <div className='block-menu-directions-container'> */}
         <div className="block-menu-container">
-        <div className="block-container" >
+        <div className="block-container">
           {blockMap.map((image, index) => (
-            <img src={image.src} key={index} alt={image.name} className={(image.name === blockType ? `block${image.className} shadow interactive` : `block${image.className} interactive`)} onClick={() => handleTypeChange(image.name)}/>
+            <img 
+              src={image.src} 
+              key={index} 
+              alt={image.name} 
+              className={`${image.name === blockType ? `block${image.className} selected-block shadow interactive` : `block${image.className} interactive`}`} 
+              onClick={() => handleTypeChange(image.name)} 
+            />
           ))}
         </div>
+
         </div>
         <h5>select block</h5>
         {/* </div> */}
