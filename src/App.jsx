@@ -16,7 +16,7 @@ import Tornado from './tornado.jsx'
 
 function App() {
   const toCaptureRef = useRef(null);
-  const [blockType, setType] = useState(null);
+  const [blockType, setType] = useState('sprite');
   const [weather, setWeather] = useState(null);
   const [day, setDay] = useState(true);
   const [tornado, setTornado] = useState(false);
@@ -69,7 +69,7 @@ function App() {
         <div className="block-menu-container">
           <WeatherMenu onWeatherChange={handleWeatherChange}/>  
         </div>
-        <h5>select weather</h5>
+        <h5 className='text-red'>select weather</h5>
         {/* </div> */}
         <div className="title-container">
           <img src={title} className="title"/>
@@ -89,7 +89,7 @@ function App() {
         </div>
 
         </div>
-        <h5>select block</h5>
+        <h5 className='text-red'>select block</h5>
         {/* </div> */}
       </div>
     </div>

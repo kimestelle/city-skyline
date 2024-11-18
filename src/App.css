@@ -336,3 +336,7 @@ h5 {
 .selected-block {
   filter: brightness(0) saturate(100%) invert(28%) sepia(90%) saturate(1800%) hue-rotate(356deg) brightness(93%) contrast(118%);
 }
+
+.text-red {
+  color: #E70503
+}
