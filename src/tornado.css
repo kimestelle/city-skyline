@@ -234,5 +234,20 @@
 }
 
 .rattle-animation {
-    animation: rattle 0.1s linear 10;
+    animation: bounce-twice 0.1s linear 10;
+}
+
+@keyframes bounce-twice {
+    0%, 100% {
+        transform: translateY(0) translateX(-30%);
+    }
+    25% {
+        transform: translateY(-15px) translateX(-30%);
+    }
+    50% {
+        transform: translateY(0) translateX(-30%);
+    }
+    75% {
+        transform: translateY(-10px) translateX(-30%);
+    }
 }
